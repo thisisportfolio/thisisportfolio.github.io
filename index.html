@@ -17,44 +17,49 @@
         section { padding: 60px 0; border-bottom: 1px solid #222; }
         h2 { color: #f1f1f1; border-left: 4px solid #007bff; padding-left: 15px; margin-bottom: 30px; }
         
-        /* 가로 스크롤 박스 설정 */
+        /* 가로 스크롤 박스 수정 */
         .video-grid { 
-            display: flex;             /* 일렬로 배치 */
-            overflow-x: auto;          /* 가로 내용이 넘치면 스크롤 생성 */
-            gap: 20px;                 /* 박스 사이 간격 */
-            padding: 20px 0;           /* 위아래 여백 */
-            scroll-snap-type: x mandatory; /* 스크롤 시 박스가 딱딱 끊겨서 멈추게 함 */
-            -ms-overflow-style: none;  /* IE에서 스크롤바 숨기기 */
-            scrollbar-width: none;     /* 파이어폭스에서 스크롤바 숨기기 */
+            display: flex; 
+            overflow-x: auto;          /* 가로 스크롤 활성화 */
+            gap: 20px; 
+            padding: 20px 5px;         /* 좌우 여백 살짝 추가 */
+            scroll-snap-type: x mandatory; 
+            
+            /* 스크롤바 디자인 (컴퓨터에서 스크롤이 가능함을 보여줌) */
+            -ms-overflow-style: auto;  /* IE */
+            scrollbar-width: thin;     /* 파이어폭스: 얇은 스크롤바 */
         }
         
-        /* 크롬, 사파리 등에서 스크롤바 숨기기 (선택사항: 깔끔해 보임) */
+        /* 크롬, 사파리에서 스크롤바가 보이게 설정 (흰 배경에 어울리는 디자인) */
         .video-grid::-webkit-scrollbar {
-            display: none;
+            height: 8px;               /* 스크롤바 두께 */
+        }
+        .video-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;       /* 스크롤바 뒷배경 */
+            border-radius: 10px;
+        }
+        .video-grid::-webkit-scrollbar-thumb {
+            background: #ccc;          /* 스크롤바 손잡이 색상 */
+            border-radius: 10px;
+        }
+        .video-grid::-webkit-scrollbar-thumb:hover {
+            background: #aaa;          /* 마우스 올렸을 때 색상 */
         }
         
-        /* 개별 영상 아이템 크기 고정 */
+        /* 개별 아이템 */
         .video-item { 
-            flex: 0 0 300px;           /* 중요: 박스가 줄어들지 않도록 300px로 크기 고정 */
+            flex: 0 0 300px;           /* 컴퓨터에서 시원하게 보이도록 300px로 조정 */
             background: #ffffff; 
             padding: 15px; 
             border: 1px solid #eeeeee; 
             border-radius: 10px; 
-            text-align: center; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            scroll-snap-align: start;  /* 스크롤 멈출 때 자석처럼 붙는 지점 */
+            scroll-snap-align: start;
+            transition: transform 0.3s; /* 마우스 올렸을 때 반응 추가 */
         }
-        
-        /* 영상 내부의 iframe 크기 */
-        .video-item iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            border: none;
-            border-radius: 5px;
+        .video-item:hover {
+            transform: translateY(-5px); /* 살짝 떠오르는 효과 */
         }
-
-        /* 개별 영상 아이템 */
-        .video-item { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: center; }
 
         /* 실제 유튜브 영상(iframe) 설정 - 이 부분이 핵심! */
         .video-item iframe {
