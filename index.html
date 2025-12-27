@@ -17,8 +17,41 @@
         section { padding: 60px 0; border-bottom: 1px solid #222; }
         h2 { color: #f1f1f1; border-left: 4px solid #007bff; padding-left: 15px; margin-bottom: 30px; }
         
-       /* 영상 박스 그리드 */
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        /* 가로 스크롤 박스 설정 */
+        .video-grid { 
+            display: flex;             /* 일렬로 배치 */
+            overflow-x: auto;          /* 가로 내용이 넘치면 스크롤 생성 */
+            gap: 20px;                 /* 박스 사이 간격 */
+            padding: 20px 0;           /* 위아래 여백 */
+            scroll-snap-type: x mandatory; /* 스크롤 시 박스가 딱딱 끊겨서 멈추게 함 */
+            -ms-overflow-style: none;  /* IE에서 스크롤바 숨기기 */
+            scrollbar-width: none;     /* 파이어폭스에서 스크롤바 숨기기 */
+        }
+        
+        /* 크롬, 사파리 등에서 스크롤바 숨기기 (선택사항: 깔끔해 보임) */
+        .video-grid::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* 개별 영상 아이템 크기 고정 */
+        .video-item { 
+            flex: 0 0 300px;           /* 중요: 박스가 줄어들지 않도록 300px로 크기 고정 */
+            background: #ffffff; 
+            padding: 15px; 
+            border: 1px solid #eeeeee; 
+            border-radius: 10px; 
+            text-align: center; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            scroll-snap-align: start;  /* 스크롤 멈출 때 자석처럼 붙는 지점 */
+        }
+        
+        /* 영상 내부의 iframe 크기 */
+        .video-item iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 5px;
+        }
 
         /* 개별 영상 아이템 */
         .video-item { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: center; }
