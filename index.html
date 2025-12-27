@@ -50,12 +50,20 @@
             -ms-overflow-style: auto;
             scrollbar-width: thin;
         }
+        /* 모바일에서 스크롤바가 숨겨지지 않도록 함 */
+            -webkit-overflow-scrolling: touch; 
+        }
         
+        /* 모든 브라우저에서 스크롤바를 보이게 하는 설정 */
+        .video-grid::-webkit-scrollbar {
+            height: 8px;           /* 두께를 조금 더 두껍게 해서 잘 보이게 함 */
+            display: block !important;
+        }
+                
         /* 스크롤바 디자인 (화이트 모드용) */
-        .video-grid::-webkit-scrollbar { height: 8px; }
         .video-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
         .video-grid::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; }
-        .video-grid::-webkit-scrollbar-thumb:hover { background: #bbb; }
+        .video-grid::-webkit-scrollbar-thumb:hover { background: #555; }
         
         /* 개별 아이템 (화이트 모드 최적화) */
         .video-item { 
