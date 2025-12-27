@@ -43,60 +43,38 @@
             display: flex; 
             overflow-x: auto; 
             gap: 20px; 
-            padding: 10px 5px 30px 5px; /* 하단 스크롤바 공간 확보 */
+            padding: 10px 5px 30px 5px; 
             scroll-snap-type: x mandatory; 
-            -webkit-overflow-scrolling: touch; /* 모바일 부드러운 스크롤 */
+            -webkit-overflow-scrolling: touch; 
         }
 
-        /* 1. 스크롤바 전체 두께 */
+        /* 스크롤바 디자인 */
         .video-grid::-webkit-scrollbar {
-            height: 10px;           /* 모바일에서도 잘 보이게 두께 고정 */
+            height: 8px;
             display: block !important;
         }
+        .video-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        .video-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 10px; border: 2px solid #f1f1f1; }
+        .video-grid::-webkit-scrollbar-thumb:hover { background: #444; }
 
-        /* 2. 스크롤바 바닥(길) 디자인 */
-        .video-grid::-webkit-scrollbar-track { 
-            background: #f1f1f1; 
-            border-radius: 10px; 
-        }
-
-        /* 3. 스크롤바 손잡이 디자인 (확실히 진하게) */
-        .video-grid::-webkit-scrollbar-thumb { 
-            background: #bbb;
-            border-radius: 10px; 
-            border: 2px solid #f1f1f1; /* 테두리를 줘서 좀 더 입체적으로 */
-        }
-
-        .video-grid::-webkit-scrollbar-thumb:hover { 
-            background: #444; 
-        }
-
-        /* 파이어폭스용 설정 */
-        .video-grid {
-            scrollbar-width: auto;
-            scrollbar-color: #666 #f1f1f1;
-        }
         /* 개별 아이템 설정 (모바일 최적화 버전) */
         .video-item { 
-            flex: 0 0 85%;            /* 가로 폭의 85% 차지 (옆 박스가 15%만큼 슬쩍 보임) */
-            max-width: 350px;         /* 컴퓨터에서 너무 커지지 않게 제한 */
+            flex: 0 0 85%;            /* 모바일에서 옆 박스가 살짝 보임 */
+            max-width: 350px; 
             background: #ffffff; 
             padding: 15px; 
             border: 1px solid #eee; 
             border-radius: 12px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            
-        /* 중요: 모바일에서 넘겼을 때 화면 중앙에 딱 오게 함 */
-            scroll-snap-align: center; 
-            
+            scroll-snap-align: center; /* 모바일에서 가운데 정렬 */
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        /* 데스크탑(화면이 클 때)에서는 다시 예전처럼 300px 정도로 고정 */
+        /* 데스크탑(화면이 클 때) 설정 */
         @media (min-width: 768px) {
             .video-item {
                 flex: 0 0 300px;
-                scroll-snap-align: start; /* 큰 화면에선 왼쪽 정렬이 깔끔함 */
+                scroll-snap-align: start; 
             }
         }
 
@@ -135,74 +113,3 @@
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <div class="profile-img"></div>
-        <h1>안녕하세요, [이름]입니다.</h1>
-        <p>영상으로 가치를 전달하는 [나의 직무]입니다.</p>
-        <p>Email: example@email.com | Instagram: <a href="https://instagram.com/myid">@myid</a></p>
-    </header>
-
-    <section id="cat1">
-        <h2>Category 1. 유튜브 콘텐츠</h2>
-        <div class="video-grid">
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브1</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브2</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브3</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브4</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브5</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat2">
-        <h2>Category 2. 브랜드 홍보 영상</h2>
-        <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>브랜드 광고 01</p></div>
-        </div>
-    </section>
-
-    <section id="cat3">
-        <h2>Category 3. 숏폼 / 릴스</h2>
-        <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>릴스 제작물</p></div>
-        </div>
-    </section>
-
-    <section id="cat4">
-        <h2>Category 4. 모션 그래픽</h2>
-        <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>아트웍 영상</p></div>
-        </div>
-    </section>
-
-    <section id="cat5">
-        <h2>Category 5. 기타 개인 작업</h2>
-        <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>Vlog 등</p></div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Copyright 2025. [이름] All rights reserved.</p>
-        <p><a href="mailto:example@email.com">연락하기 (Email)</a></p>
-    </footer>
-</div>
-
-</body>
-</html>
