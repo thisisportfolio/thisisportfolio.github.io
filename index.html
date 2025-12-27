@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 포트폴리오</title>
+    <style>
+        /* 기본 디자인: 세련된 다크 모드 */
+        body { font-family: 'Pretendard', sans-serif; background-color: #0f0f0f; color: #fff; line-height: 1.6; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* 자기소개 섹션 */
+        header { text-align: center; padding: 100px 0; border-bottom: 1px solid #333; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; background: #444; margin-bottom: 20px; }
+        
+        /* 카테고리 섹션 */
+        section { padding: 60px 0; border-bottom: 1px solid #222; }
+        h2 { color: #f1f1f1; border-left: 4px solid #007bff; padding-left: 15px; margin-bottom: 30px; }
+        
+        /* 영상 박스 */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .video-item { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: center; }
+        .video-placeholder { background: #333; width: 100%; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; border-radius: 5px; }
+
+        /* 연락처 */
+        footer { text-align: center; padding: 50px 0; color: #888; }
+        a { color: #007bff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="display: flex; justify-content: center;"><div class="profile-img"></div></div>
+        <h1>안녕하세요, [이름]입니다.</h1>
+        <p>영상으로 가치를 전달하는 [나의 직무]입니다.</p>
+        <p>Email: example@email.com | Instagram: @myid</p>
+    </header>
+
+    <section id="cat1">
+        <h2>Category 1. 유튜브 콘텐츠</h2>
+        <div class="video-grid">
+            <div class="video-item"><div class="video-placeholder">영상 1 (유튜브 링크 넣을 곳)</div><p>프로젝트 제목</p></div>
+            <div class="video-item"><div class="video-placeholder">영상 2</div><p>프로젝트 제목</p></div>
+        </div>
+    </section>
+
+    <section id="cat2">
+        <h2>Category 2. 브랜드 홍보 영상</h2>
+        <div class="video-grid">
+            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>브랜드 광고 01</p></div>
+        </div>
+    </section>
+
+    <section id="cat3">
+        <h2>Category 3. 숏폼 / 릴스</h2>
+        <div class="video-grid">
+            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>릴스 제작물</p></div>
+        </div>
+    </section>
+
+    <section id="cat4">
+        <h2>Category 4. 모션 그래픽</h2>
+        <div class="video-grid">
+            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>아트웍 영상</p></div>
+        </div>
+    </section>
+
+    <section id="cat5">
+        <h2>Category 5. 기타 개인 작업</h2>
+        <div class="video-grid">
+            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>Vlog 등</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright 2025. [이름] All rights reserved.</p>
+        <p><a href="mailto:example@email.com">연락하기 (Email)</a></p>
+    </footer>
+</div>
+
+</body>
+</html>
