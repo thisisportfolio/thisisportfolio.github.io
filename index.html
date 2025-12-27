@@ -5,72 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
     <style>
-        /* 기본 디자인: 세련된 다크 모드 */
-        body { font-family: 'Pretendard', sans-serif; background-color: #0f0f0f; color: #fff; line-height: 1.6; margin: 0; padding: 0; }
+        /* 기본 디자인: 깔끔한 화이트 모드 */
+        body { 
+            font-family: 'Pretendard', -apple-system, sans-serif; 
+            background-color: #ffffff; /* 배경 흰색 */
+            color: #333;               /* 글자색 진한 회색 */
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+        }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
         /* 자기소개 섹션 */
-        header { text-align: center; padding: 100px 0; border-bottom: 1px solid #333; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; background: #444; margin-bottom: 20px; }
+        header { 
+            text-align: center; 
+            padding: 100px 0; 
+            border-bottom: 1px solid #eee; /* 선 색상 연하게 */
+        }
+        .profile-img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            background: #f0f0f0; 
+            margin-bottom: 20px; 
+            border: 1px solid #ddd;
+        }
         
         /* 카테고리 섹션 */
-        section { padding: 60px 0; border-bottom: 1px solid #222; }
-        h2 { color: #f1f1f1; border-left: 4px solid #007bff; padding-left: 15px; margin-bottom: 30px; }
+        section { padding: 60px 0; border-bottom: 1px solid #f5f5f5; }
+        h2 { 
+            color: #222; 
+            border-left: 4px solid #007bff; 
+            padding-left: 15px; 
+            margin-bottom: 30px; 
+        }
         
-        /* 가로 스크롤 박스 수정 */
+        /* 가로 스크롤 박스 */
         .video-grid { 
             display: flex; 
-            overflow-x: auto;          /* 가로 스크롤 활성화 */
+            overflow-x: auto; 
             gap: 20px; 
-            padding: 20px 5px;         /* 좌우 여백 살짝 추가 */
+            padding: 20px 5px; 
             scroll-snap-type: x mandatory; 
-            
-            /* 스크롤바 디자인 (컴퓨터에서 스크롤이 가능함을 보여줌) */
-            -ms-overflow-style: auto;  /* IE */
-            scrollbar-width: thin;     /* 파이어폭스: 얇은 스크롤바 */
+            -ms-overflow-style: auto;
+            scrollbar-width: thin;
         }
         
-        /* 크롬, 사파리에서 스크롤바가 보이게 설정 (흰 배경에 어울리는 디자인) */
-        .video-grid::-webkit-scrollbar {
-            height: 8px;               /* 스크롤바 두께 */
-        }
-        .video-grid::-webkit-scrollbar-track {
-            background: #f1f1f1;       /* 스크롤바 뒷배경 */
-            border-radius: 10px;
-        }
-        .video-grid::-webkit-scrollbar-thumb {
-            background: #ccc;          /* 스크롤바 손잡이 색상 */
-            border-radius: 10px;
-        }
-        .video-grid::-webkit-scrollbar-thumb:hover {
-            background: #aaa;          /* 마우스 올렸을 때 색상 */
-        }
+        /* 스크롤바 디자인 (화이트 모드용) */
+        .video-grid::-webkit-scrollbar { height: 8px; }
+        .video-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        .video-grid::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
+        .video-grid::-webkit-scrollbar-thumb:hover { background: #bbb; }
         
-        /* 개별 아이템 */
+        /* 개별 아이템 (화이트 모드 최적화) */
         .video-item { 
-            flex: 0 0 300px;           /* 컴퓨터에서 시원하게 보이도록 300px로 조정 */
+            flex: 0 0 300px; 
             background: #ffffff; 
             padding: 15px; 
-            border: 1px solid #eeeeee; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eee;      /* 연한 테두리 */
+            border-radius: 12px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 은은한 그림자 */
             scroll-snap-align: start;
-            transition: transform 0.3s; /* 마우스 올렸을 때 반응 추가 */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .video-item:hover {
-            transform: translateY(-5px); /* 살짝 떠오르는 효과 */
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* 호버 시 그림자 강조 */
         }
 
-        /* 실제 유튜브 영상(iframe) 설정 - 이 부분이 핵심! */
+        /* 유튜브 영상 설정 */
         .video-item iframe {
             width: 100%;
-            aspect-ratio: 16 / 9; /* 가로세로 16:9 고정 */
+            aspect-ratio: 16 / 9;
             border: none;
-            border-radius: 5px;
-            }
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        
+        .video-item p { margin: 0; font-weight: 600; color: #555; }
+
+        /* 빈 박스(Placeholder) 화이트 모드용 */
+        .video-placeholder {
+            background: #f9f9f9;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            color: #aaa;
+            font-size: 0.9rem;
+            border: 1px dashed #ddd;
+        }
+
         /* 연락처 */
-        footer { text-align: center; padding: 50px 0; color: #888; }
-        a { color: #007bff; text-decoration: none; }
+        footer { text-align: center; padding: 50px 0; color: #aaa; }
+        a { color: #007bff; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -80,55 +112,60 @@
         <div style="display: flex; justify-content: center;"><div class="profile-img"></div></div>
         <h1>안녕하세요, [이름]입니다.</h1>
         <p>영상으로 가치를 전달하는 [나의 직무]입니다.</p>
-        <p>Email: example@email.com | Instagram: @myid</p>
+        <p>Email: example@email.com | Instagram: <a href="https://instagram.com/myid">@myid</a></p>
     </header>
 
     <section id="cat1">
         <h2>Category 1. 유튜브 콘텐츠</h2>
         <div class="video-grid">
             <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A?si=KjtcTAV6dxqjgG9n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe><p>라이브1</p></div>
+                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A" title="YouTube video player" allowfullscreen></iframe>
+                <p>라이브1</p>
+            </div>
             <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k?si=--aT6aHIp_DNI-Ct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe><p>라이브2</p></div>
+                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
+                <p>라이브2</p>
+            </div>
             <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k?si=--aT6aHIp_DNI-Ct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe><p>라이브3</p></div>
-             <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k?si=--aT6aHIp_DNI-Ct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe><p>라이브4</p></div>
-             <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k?si=--aT6aHIp_DNI-Ct" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe><p>라이브5</p></div>
+                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
+                <p>라이브3</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
+                <p>라이브4</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
+                <p>라이브5</p>
+            </div>
         </div>
     </section>
 
     <section id="cat2">
         <h2>Category 2. 브랜드 홍보 영상</h2>
         <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>브랜드 광고 01</p></div>
+            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>브랜드 광고 01</p></div>
         </div>
     </section>
 
     <section id="cat3">
         <h2>Category 3. 숏폼 / 릴스</h2>
         <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>릴스 제작물</p></div>
+            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>릴스 제작물</p></div>
         </div>
     </section>
 
     <section id="cat4">
         <h2>Category 4. 모션 그래픽</h2>
         <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>아트웍 영상</p></div>
+            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>아트웍 영상</p></div>
         </div>
     </section>
 
     <section id="cat5">
         <h2>Category 5. 기타 개인 작업</h2>
         <div class="video-grid">
-            <div class="video-item"><div class="video-placeholder">영상 링크</div><p>Vlog 등</p></div>
+            <div class="video-item"><div class="video-placeholder">영상 준비 중</div><p>Vlog 등</p></div>
         </div>
     </section>
 
