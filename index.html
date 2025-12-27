@@ -76,17 +76,30 @@
             scrollbar-width: auto;
             scrollbar-color: #666 #f1f1f1;
         }
-        
+        /* 개별 아이템 설정 (모바일 최적화 버전) */
         .video-item { 
-            flex: 0 0 300px; 
+            flex: 0 0 85%;            /* 가로 폭의 85% 차지 (옆 박스가 15%만큼 슬쩍 보임) */
+            max-width: 350px;         /* 컴퓨터에서 너무 커지지 않게 제한 */
             background: #ffffff; 
             padding: 15px; 
             border: 1px solid #eee; 
             border-radius: 12px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            scroll-snap-align: start;
+            
+        /* 중요: 모바일에서 넘겼을 때 화면 중앙에 딱 오게 함 */
+            scroll-snap-align: center; 
+            
             transition: transform 0.3s, box-shadow 0.3s;
         }
+        
+        /* 데스크탑(화면이 클 때)에서는 다시 예전처럼 300px 정도로 고정 */
+        @media (min-width: 768px) {
+            .video-item {
+                flex: 0 0 300px;
+                scroll-snap-align: start; /* 큰 화면에선 왼쪽 정렬이 깔끔함 */
+            }
+        }
+
         .video-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
