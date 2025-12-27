@@ -17,11 +17,19 @@
         section { padding: 60px 0; border-bottom: 1px solid #222; }
         h2 { color: #f1f1f1; border-left: 4px solid #007bff; padding-left: 15px; margin-bottom: 30px; }
         
-        /* 영상 박스 */
+       /* 영상 박스 그리드 */
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .video-item { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: center; }
-        .video-placeholder { background: #333; width: 100%; aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; border-radius: 5px; }
 
+        /* 개별 영상 아이템 */
+        .video-item { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: center; }
+
+        /* 실제 유튜브 영상(iframe) 설정 - 이 부분이 핵심! */
+        .video-item iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* 가로세로 16:9 고정 */
+            border: none;
+            border-radius: 5px;
+            }
         /* 연락처 */
         footer { text-align: center; padding: 50px 0; color: #888; }
         a { color: #007bff; text-decoration: none; }
@@ -41,7 +49,7 @@
         <h2>Category 1. 유튜브 콘텐츠</h2>
         <div class="video-grid">
             <div class="video-item">
-                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/dtKyxKyVE0A?si=KjtcTAV6dxqjgG9n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p>프로젝트 제목</p></div>
+                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A?si=KjtcTAV6dxqjgG9n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><p>프로젝트 제목</p></div>
             <div class="video-item"><div class="video-placeholder">영상 2</div><p>프로젝트 제목</p></div>
         </div>
     </section>
