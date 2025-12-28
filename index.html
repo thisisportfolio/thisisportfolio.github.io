@@ -92,7 +92,22 @@
             border-radius: 6px;
             margin-bottom: 10px;
         }
+        /* 세로형 숏폼 전용 스타일 */
+        .video-item.vertical {
+            flex: 0 0 200px;     /* 가로 폭을 좁게 (모바일/PC 공통) */
+        }
         
+        .video-item.vertical iframe, 
+        .video-item.vertical .video-placeholder {
+            aspect-ratio: 9 / 16; /* 세로 비율로 고정 */
+        }
+        
+        /* 모바일에서는 숏폼 박스를 조금 더 키우고 싶을 때 */
+        @media (max-width: 768px) {
+            .video-item.vertical {
+                flex: 0 0 60%;    /* 모바일 화면 가로의 60% 정도 차지 */
+            }
+        }
         .video-item p { margin: 0; font-weight: 600; color: #555; }
 
         .video-placeholder {
@@ -153,7 +168,7 @@
     <section id="cat2">
         <h2>Category 2. 쇼핑라이브</h2>
         <div class="video-grid">
-            <div class="video-item">
+            <div class="video-item" vertical>
                 <iframe src="https://shoppinglive.kakao.com/live/35826?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare
                 " title="YouTube video player" allowfullscreen></iframe>
                 <p>라이브1</p>
