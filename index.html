@@ -6,151 +6,56 @@
     <title>포트폴리오</title>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        /* 1. 기본 디자인 및 글씨체 */
-        body { 
-            font-family: 'Pretendard', -apple-system, sans-serif; 
-            background-color: #ffffff; 
-            color: #333; 
-            line-height: 1.6; 
-            margin: 0; 
-            padding: 0; 
-            word-break: keep-all; 
-            scroll-behavior: smooth;
-        }
+        /* [기본 스타일 유지] */
+        body { font-family: 'Pretendard', sans-serif; background-color: #ffffff; color: #333; line-height: 1.6; margin: 0; padding: 0; word-break: keep-all; scroll-behavior: smooth; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
         /* 퀵 메뉴 */
-        .nav-menu {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-        .nav-menu a {
-            padding: 8px 15px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #666;
-            text-decoration: none;
-            transition: 0.2s;
-        }
+        .nav-menu { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+        .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; transition: 0.2s; }
         .nav-menu a:hover { color: #007bff; }
 
-        header { 
-            text-align: center; 
-            padding: 100px 0 60px 0; 
-            border-bottom: 1px solid #eee; 
-        }
+        header { text-align: center; padding: 100px 0 60px 0; border-bottom: 1px solid #eee; }
         header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
         header p { font-size: 1.1rem; color: #666; font-weight: 400; }
         
         section { padding: 80px 0 40px 0; border-bottom: 1px solid #f5f5f5; }
 
-        .section-title-wrap {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 30px;
-            border-left: 4px solid #007bff;
-            padding-left: 15px;
-        }
-        .section-title-wrap h2 { 
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #222; 
-            margin: 0;
-            border: none; 
-            padding: 0;
-        }
-        .section-title-wrap .sub-desc {
-            font-size: 0.9rem;
-            color: #999; 
-            font-weight: 400;
-        }
+        .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; border-left: 4px solid #007bff; padding-left: 15px; }
+        .section-title-wrap h2 { font-size: 1.5rem; font-weight: 700; color: #222; margin: 0; }
+        .section-title-wrap .sub-desc { font-size: 0.9rem; color: #999; font-weight: 400; }
         
-        /* 2. 가로 스크롤 및 스크롤바 호버 효과 */
-        .video-grid { 
-            display: flex; 
-            overflow-x: auto; 
-            gap: 20px; 
-            padding: 10px 5px 30px 5px; 
-            scroll-snap-type: x mandatory; 
-            -webkit-overflow-scrolling: touch; 
-        }
+        /* [스크롤바 및 호버 효과 유지] */
+        .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 20px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .video-grid::-webkit-scrollbar { height: 8px; }
         .video-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        .video-grid::-webkit-scrollbar-thumb { 
-            background: #ccc; 
-            border-radius: 10px; 
-            transition: background 0.2s ease; 
-        }
-        /* 스크롤바 호버 시 진한 회색으로 변경 */
-        .video-grid::-webkit-scrollbar-thumb:hover { 
-            background: #666; 
+        .video-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; transition: background 0.2s ease; }
+        .video-grid::-webkit-scrollbar-thumb:hover { background: #666; }
+
+        /* [수정] 카테고리 전체 설명(서머리) 스타일 - 영상 아래로 이동함에 따라 여백 조정 */
+        .category-summary {
+            background-color: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 10px; /* 영상 그리드와의 간격 */
+            margin-bottom: 20px;
+            border-left: 1px solid #eee;
+            line-height: 1.7;
         }
 
-        /* 3. 영상 아이템 및 호버 효과 */
-        .video-item { 
-            flex: 0 0 60%;
-            max-width: 240px; 
-            background: #ffffff; 
-            padding: 15px; 
-            border: 1px solid #eee; 
-            border-radius: 14px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-            scroll-snap-align: center;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .video-item:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1); 
-            border-color: #007bff;
-        }
-
-        .video-item iframe, 
-        .video-item img, 
-        .video-item .video-placeholder {
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            border: none;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+        .video-item { flex: 0 0 60%; max-width: 240px; background: #ffffff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; transition: all 0.3s ease; overflow: hidden; }
+        .video-item:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: #007bff; }
+        .video-item img, .video-item .video-placeholder { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 8px; margin-bottom: 12px; display: block; transition: transform 0.3s ease; }
         .video-item:hover img { transform: scale(1.05); }
+        .video-item p { margin: 0; font-weight: 700; color: #222; font-size: 0.95rem; letter-spacing: -0.5px; }
+        .video-item .video-details { margin-top: 6px; font-size: 0.8rem; color: #777; font-weight: 400; line-height: 1.4; }
 
-        .video-item p { 
-            margin: 0; 
-            font-weight: 600; 
-            color: #444; 
-            font-size: 0.95rem; 
-            letter-spacing: -0.5px;
-            transition: color 0.3s;
-        }
-        .video-item:hover p { color: #007bff; }
-
-        @media (min-width: 768px) {
-            .video-item { flex: 0 0 220px; scroll-snap-align: start; }
-        }
-
-        .video-placeholder {
-            background: #f9f9f9; display: flex; align-items: center; 
-            justify-content: center; color: #aaa; border: 1px dashed #ddd; font-size: 0.8rem;
-        }
-
+        @media (min-width: 768px) { .video-item { flex: 0 0 220px; scroll-snap-align: start; } }
+        .video-placeholder { background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #aaa; border: 1px dashed #ddd; font-size: 0.8rem; aspect-ratio: 9/16; border-radius: 8px; margin-bottom: 12px; }
         footer { text-align: center; padding: 80px 0; color: #bbb; font-size: 0.9rem; }
-        a { color: #007bff; text-decoration: none; transition: 0.2s; }
-        a:hover { color: #0056b3; text-decoration: underline; }
+        a { color: #007bff; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -168,10 +73,8 @@
 
 <div class="container">
     <header>
-        <div class="profile-img"></div>
         <h1>안녕하세요, [이름]입니다.</h1>
         <p>영상으로 가치를 전달하는 [나의 직무]입니다.</p>
-        <p>Email: example@email.com | Instagram: <a href="#">@myid</a></p>
     </header>
 
     <section id="cat1">
@@ -179,138 +82,60 @@
             <h2>Beauty</h2>
             <span class="sub-desc">"뷰티개발자의 전문성을 녹입니다."</span>
         </div>
+        
         <div class="video-grid">
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>유튜브 프로젝트 명</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>유튜브 프로젝트 명</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1640302?fm=shoppinglive&sn=home" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://view.shoppinglive.naver.com/replays/1640302?fm=shoppinglive&sn=home" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>유튜브 프로젝트 명</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1500801?fm=shoppinglive&sn=home" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://view.shoppinglive.naver.com/replays/1500801?fm=shoppinglive&sn=home" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>유튜브 프로젝트 명</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>유튜브 프로젝트 명</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
+        </div>
+
+        <div class="category-summary">
+            이 카테고리에서는 약 100회 이상의 뷰티 방송 경험을 바탕으로 전문적인 라이브 노하우를 담고 있습니다.
         </div>
     </section>
 
     <section id="cat2">
         <div class="section-title-wrap">
             <h2>Tech</h2>
-            <span class="sub-desc">"기능시연, 스토리텔링, TECH전문성으로 브랜딩과 매출을 위한 방송을 진행합니다."</span>
+            <span class="sub-desc">"기능시연, 스토리텔링, TECH전문성"</span>
         </div>
         <div class="video-grid">
             <div class="video-item">
-                <a href="https://shoppinglive.kakao.com/live/35826" target="_blank">
-                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
-                </a>
+                <a href="https://shoppinglive.kakao.com/live/35826" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
                 <p>카카오 쇼핑라이브</p>
+                <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
         </div>
-    </section>
-
-    <section id="cat3">
-        <div class="section-title-wrap">
-            <h2>Health</h2>
-            <span class="sub-desc">"전문적이고 공감하는 건강 이야기로 브랜딩과 매출을 위한 방송을 진행합니다."</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat4">
-        <div class="section-title-wrap">
-            <h2>Food</h2>
-            <span class="sub-desc">"오감을 만족시키는 먹방으로 브랜딩과 매출을 위한 방송을 진행합니다."</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat5">
-        <div class="section-title-wrap">
-            <h2>Living</h2>
-            <span class="sub-desc">"생활의 지혜를 공유합니다, 코너 속의 코너! 알.쓸.신.잡 MC!"</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat6">
-        <div class="section-title-wrap">
-            <h2>Fashion</h2>
-            <span class="sub-desc">"트렌하며 편안한 방송을 하겠습니다. OOTD에 맞는 코디로 브랜딩과 매출을 위한 방송을 진행합니다."</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat7">
-        <div class="section-title-wrap">
-            <h2>Travel/Concept</h2>
-            <span class="sub-desc">"위메프 소담PGM, 하나투어, 영어라이브, 쿠팡＇성은이망극한쇼핑’, 유튜브라이브 등"</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat8">
-        <div class="section-title-wrap">
-            <h2>Lecture</h2>
-            <span class="sub-desc">"방송기획 / 연출 / 마케팅 강의"</span>
-        </div>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">준비 중</div>
-                <p>세로 제작물 01</p>
-            </div>
+        <div class="category-summary">
+            복잡한 IT 기기도 쉽고 재미있게! 테크 제품의 핵심 포인트를 짚어내는 라이브 모음입니다.
         </div>
     </section>
 
     <footer>
         <p>Copyright 2025. [이름] All rights reserved.</p>
-        <p><a href="mailto:example@email.com">연락하기 (Email)</a></p>
     </footer>
 </div>
-
 </body>
 </html>
