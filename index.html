@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오</title>
     <style>
-        /* 기본 디자인: 깔끔한 화이트 모드 */
+        /* 1. 기본 디자인 */
         body { 
             font-family: 'Pretendard', -apple-system, sans-serif; 
             background-color: #ffffff; 
@@ -16,123 +16,89 @@
         }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
-        /* 자기소개 섹션 */
         header { 
             text-align: center; 
             padding: 100px 0; 
             border-bottom: 1px solid #eee; 
         }
         .profile-img { 
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%; 
-            background: #f0f0f0; 
-            margin: 0 auto 20px auto; 
-            border: 1px solid #ddd;
+            width: 150px; height: 150px; 
+            border-radius: 50%; background: #f0f0f0; 
+            margin: 0 auto 20px auto; border: 1px solid #ddd;
         }
         
-        /* 카테고리 섹션 */
         section { padding: 60px 0; border-bottom: 1px solid #f5f5f5; }
         h2 { 
-            color: #222; 
-            border-left: 4px solid #007bff; 
-            padding-left: 15px; 
-            margin-bottom: 30px; 
+            color: #222; border-left: 4px solid #007bff; 
+            padding-left: 15px; margin-bottom: 30px; 
         }
         
-        /* 가로 스크롤 박스 핵심 설정 */
+        /* 2. 가로 스크롤 설정 */
         .video-grid { 
-            display: flex; 
-            overflow-x: auto; 
-            gap: 20px; 
+            display: flex; overflow-x: auto; gap: 20px; 
             padding: 10px 5px 30px 5px; 
             scroll-snap-type: x mandatory; 
             -webkit-overflow-scrolling: touch; 
         }
 
         /* 스크롤바 디자인 */
-        .video-grid::-webkit-scrollbar {
-            height: 8px;
-            display: block !important;
-        }
+        .video-grid::-webkit-scrollbar { height: 8px; display: block !important; }
         .video-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
         .video-grid::-webkit-scrollbar-thumb { background: #bbb; border-radius: 10px; border: 2px solid #f1f1f1; }
-        .video-grid::-webkit-scrollbar-thumb:hover { background: #888; }
 
-        /* 개별 아이템 설정 (모바일 최적화 버전) */
+        /* 3. [기본] 세로형 아이템 설정 (9:16) */
         .video-item { 
-            flex: 0 0 80%;            /* 모바일에서 옆 박스가 살짝 보임 */
-            max-width: 350px; 
+            flex: 0 0 60%; /* 모바일에서 옆 카드가 살짝 보이게 */
+            max-width: 240px; 
             background: #ffffff; 
             padding: 15px; 
             border: 1px solid #eee; 
             border-radius: 12px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            scroll-snap-align: center; /* 모바일에서 가운데 정렬 */
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        /* 데스크탑(화면이 클 때) 설정 */
-        @media (min-width: 768px) {
-            .video-item {
-                flex: 0 0 300px;
-                scroll-snap-align: start; 
-            }
+            scroll-snap-align: center;
+            transition: transform 0.3s;
         }
 
-        .video-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-
-        .video-item iframe {
+        .video-item iframe, 
+        .video-item img, 
+        .video-item .video-placeholder {
             width: 100%;
-            aspect-ratio: 16 / 9;
-            border: none;
+            aspect-ratio: 9 / 16; /* 세로 비율 기본 */
+            object-fit: cover;
             border-radius: 6px;
             margin-bottom: 10px;
+            border: none;
+            display: block;
         }
-        /* 세로형 숏폼 전용 스타일 */
-        .video-item.vertical {
-            flex: 0 0 200px;     /* 가로 폭을 좁게 (모바일/PC 공통) */
+
+        /* 4. [선택] 가로형 아이템 설정 (16:9) */
+        .video-item.horizontal {
+            flex: 0 0 85%;
+            max-width: 350px;
         }
-        /* 세로형 박스 내 이미지와 영상 설정 */
-        .video-item.vertical img,
-        .video-item.vertical iframe {
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            object-fit: cover;    /* 이미지가 박스에 꽉 차게 */
-            border-radius: 6px;
+
+        .video-item.horizontal iframe,
+        .video-item.horizontal img,
+        .video-item.horizontal .video-placeholder {
+            aspect-ratio: 16 / 9; /* 가로 비율로 변경 */
         }
-        .video-item.vertical .video-placeholder {
-            aspect-ratio: 9 / 16; /* 세로 비율로 고정 */
+
+        /* 데스크탑 조절 */
+        @media (min-width: 768px) {
+            .video-item { flex: 0 0 200px; scroll-snap-align: start; }
+            .video-item.horizontal { flex: 0 0 320px; }
         }
-        
-        /* 모바일에서는 숏폼 박스를 조금 더 키우고 싶을 때 */
-        @media (max-width: 768px) {
-            .video-item.vertical {
-                flex: 0 0 60%;    /* 모바일 화면 가로의 60% 정도 차지 */
-            }
-        }
-        .video-item p { margin: 0; font-weight: 600; color: #555; }
+
+        .video-item:hover { transform: translateY(-5px); }
+        .video-item p { margin: 0; font-weight: 600; color: #555; font-size: 0.9rem; }
 
         .video-placeholder {
-            background: #f9f9f9;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            color: #aaa;
-            font-size: 0.9rem;
-            border: 1px dashed #ddd;
+            background: #f9f9f9; display: flex; align-items: center; 
+            justify-content: center; color: #aaa; border: 1px dashed #ddd;
         }
 
         footer { text-align: center; padding: 50px 0; color: #aaa; }
-        a { color: #007bff; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
+        a { color: #007bff; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -142,80 +108,54 @@
         <div class="profile-img"></div>
         <h1>안녕하세요, [이름]입니다.</h1>
         <p>영상으로 가치를 전달하는 [나의 직무]입니다.</p>
-        <p>Email: example@email.com | Instagram: <a href="https://instagram.com/myid">@myid</a></p>
+        <p>Email: example@email.com | Instagram: <a href="#">@myid</a></p>
     </header>
 
     <section id="cat1">
-        <h2>Category 1. 유튜브 콘텐츠</h2>
+        <h2>Category 1. 유튜브 콘텐츠 (가로)</h2>
         <div class="video-grid">
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브1</p>
+            <div class="video-item horizontal">
+                <iframe src="https://www.youtube.com/embed/dtKyxKyVE0A" allowfullscreen></iframe>
+                <p>가로 영상 제목 01</p>
             </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브2</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브3</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브4</p>
-            </div>
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" title="YouTube video player" allowfullscreen></iframe>
-                <p>라이브5</p>
+            <div class="video-item horizontal">
+                <iframe src="https://www.youtube.com/embed/z4QB2suD58k" allowfullscreen></iframe>
+                <p>가로 영상 제목 02</p>
             </div>
         </div>
     </section>
 
-<section id="cat2">
-    <h2>Category 2. 쇼핑라이브</h2>
-    <div class="video-grid">
-        <div class="video-item vertical">
-            <a href="https://shoppinglive.kakao.com/live/35826" target="_blank">
-                <img src="https://via.placeholder.com/300x533?text=Kakao+Live" alt="라이브1">
-            </a>
-            <p>라이브1 (카카오 쇼핑라이브)</p>
+    <section id="cat2">
+        <h2>Category 2. 쇼핑라이브 (세로 기본)</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <a href="https://shoppinglive.kakao.com/live/35826" target="_blank">
+                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
+                </a>
+                <p>카카오 쇼핑라이브</p>
+            </div>
+            <div class="video-item">
+                <div class="video-placeholder">숏폼 영상 준비 중</div>
+                <p>릴스/숏폼 예시</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="cat3">
         <h2>Category 3. 숏폼 / 릴스</h2>
         <div class="video-grid">
             <div class="video-item">
-                <div class="video-placeholder">영상 준비 중</div>
-                <p>릴스 제작물</p>
+                <div class="video-placeholder">준비 중</div>
+                <p>세로 제작물 01</p>
             </div>
         </div>
     </section>
 
-    <section id="cat4">
-        <h2>Category 4. 모션 그래픽</h2>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">영상 준비 중</div>
-                <p>아트웍 영상</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cat5">
-        <h2>Category 5. 기타 개인 작업</h2>
-        <div class="video-grid">
-            <div class="video-item">
-                <div class="video-placeholder">영상 준비 중</div>
-                <p>Vlog 등</p>
-            </div>
-        </div>
-    </section>
-
-   <footer>
+    <footer>
         <p>Copyright 2025. [이름] All rights reserved.</p>
         <p><a href="mailto:example@email.com">연락하기 (Email)</a></p>
     </footer>
-</div> </body>
+</div>
+
+</body>
 </html>
