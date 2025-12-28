@@ -32,27 +32,48 @@
         .video-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; transition: background 0.2s ease; }
         .video-grid::-webkit-scrollbar-thumb:hover { background: #666; }
 
-        /* [수정] 카테고리 전체 설명(서머리) 스타일 - 영상 아래로 이동함에 따라 여백 조정 */
         .category-summary {
             background-color: #f8f9fa;
             padding: 15px 20px;
             border-radius: 10px;
             font-size: 0.95rem;
             color: #555;
-            margin-top: 10px; /* 영상 그리드와의 간격 */
+            margin-top: 10px;
             margin-bottom: 20px;
             border-left: 1px solid #eee;
             line-height: 1.7;
         }
-/* 1. 비디오 아이템 전체를 중앙 정렬 설정 */
+
+        /* [수정 및 추가] 비디오 아이템 및 재생 아이콘 스타일 */
         .video-item {flex: 0 0 60%;max-width: 240px;background: #ffffff;padding: 15px;border: 1px solid #eee;border-radius: 14px;box-shadow: 0 4px 12px rgba(0,0,0,0.05);scroll-snap-align: center;transition: all 0.3s ease;overflow: hidden;text-align: center; display: flex;flex-direction: column;align-items: center;}
-        .video-item img, .video-item .video-placeholder { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 8px; margin-bottom: 12px; display: block; transition: transform 0.3s ease; }
+        
+        /* 재생 아이콘을 위한 컨테이너 */
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
+        
+        .video-item img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; transition: transform 0.3s ease; }
+        
+        /* 호버 시 이미지 커지는 애니메이션 유지 */
         .video-item:hover img { transform: scale(1.05); }
+
+        /* [추가] 재생 아이콘 오버레이 스타일 */
+        .play-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* 살짝 어둡게 */
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; /* 평소엔 안보임 */
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* 클릭 방해 금지 */
+        }
+        .play-overlay span { color: white; font-size: 3rem; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); }
+        
+        /* 호버 시 재생버튼 나타남 */
+        .thumb-link:hover .play-overlay { opacity: 1; }
+
         .video-item p { margin: 0; font-weight: 700; color: #222; font-size: 0.95rem; letter-spacing: -0.5px; }
         .video-item .video-details {margin-top: 6px;font-size: 0.8rem;color: #777;font-weight: 400;line-height: 1.4;white-space: pre-line; text-align: center; }
 
         @media (min-width: 768px) { .video-item { flex: 0 0 220px; scroll-snap-align: start; } }
-        .video-placeholder { background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #aaa; border: 1px dashed #ddd; font-size: 0.8rem; aspect-ratio: 9/16; border-radius: 8px; margin-bottom: 12px; }
         footer { text-align: center; padding: 80px 0; color: #bbb; font-size: 0.9rem; }
         a { color: #007bff; text-decoration: none; }
     </style>
@@ -84,72 +105,90 @@
         
         <div class="video-grid">
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_01_beplain.png" alt="Beplain">
+                <a href="https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_01_beplain.png" alt="Beplain">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>비플레인</p>
                 <div class="video-details">네이버<br>라인, 앰플, 패드 스팟크림 등</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_02_fation.png" alt="Fation">
+                <a href="https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_02_fation.png" alt="Fation">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>파티온</p>
                 <div class="video-details">네이버<br>노스카나인 앰플, 크림, 패드 등</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1640302?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_03_silktherapy.png" alt="SilkTherapy">
+                <a href="https://view.shoppinglive.naver.com/replays/1640302?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_03_silktherapy.png" alt="SilkTherapy">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>실크테라피</p>
                 <div class="video-details">네이버<br>열강화 트리트먼트, 에센셜 오일 등</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1500801?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_04_drbio.png" alt="Dr.Bio">
+                <a href="https://view.shoppinglive.naver.com/replays/1500801?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_04_drbio.png" alt="Dr.Bio">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>닥터바이오</p>
                 <div class="video-details">네이버 카카오<br>로션, 샴푸, 트리트먼트 등</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_05_aromatica.png" alt="Aromatica">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_05_aromatica.png" alt="Aromatica">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>아로마티카</p>
                 <div class="video-details">네이버<br>샴푸, 트리트먼트, 두피토너 등</div>
             </div>
-        
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_06_eoa.png" alt="EOA">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_06_eoa.png" alt="EOA">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>EOA</p>
                 <div class="video-details">카카오<br>풀쎄라PRO, 풀써마, 앰플, 크림</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_07_carenology.png" alt="Carenology">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_07_carenology.png" alt="Carenology">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>케어놀로지</p>
                 <div class="video-details">네이버<br>필링, 오일, 세럼, 앰플, 크림 등</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_08_ilenol.png" alt="ILENOL">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_08_ilenol.png" alt="ILENOL">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>아이레놀</p>
                 <div class="video-details">네이버<br>생얼크림, 다크서클크림</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_09_vinne.png" alt="VINNE">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_09_vinne.png" alt="VINNE">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>빈느</p>
                 <div class="video-details">쿠팡스페셜라이브<br>쿠션, 립</div>
             </div>
+
             <div class="video-item">
-                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_10_kneipp.png" alt="Kneipp">
+                <a href="https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home" target="_blank" class="thumb-link">
+                    <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_10_kneipp.png" alt="Kneipp">
+                    <div class="play-overlay"><span>▶</span></div>
                 </a>
                 <p>크나이프</p>
                 <div class="video-details">카카오<br>페이스오일, 배쓰쏠트, 바디오일</div>
@@ -167,7 +206,10 @@
         </div>
         <div class="video-grid">
             <div class="video-item">
-                <a href="https://shoppinglive.kakao.com/live/35826" target="_blank"><img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브"></a>
+                <a href="https://shoppinglive.kakao.com/live/35826" target="_blank" class="thumb-link">
+                    <img src="https://via.placeholder.com/300x533?text=Thumbnail" alt="라이브">
+                    <div class="play-overlay"><span>▶</span></div>
+                </a>
                 <p>카카오 쇼핑라이브</p>
                 <div class="video-details">상세 설명을 작성하세요.</div>
             </div>
