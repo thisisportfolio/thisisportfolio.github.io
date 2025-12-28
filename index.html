@@ -96,8 +96,14 @@
         .video-item.vertical {
             flex: 0 0 200px;     /* 가로 폭을 좁게 (모바일/PC 공통) */
         }
-        
-        .video-item.vertical iframe, 
+        /* 세로형 박스 내 이미지와 영상 설정 */
+        .video-item.vertical img,
+        .video-item.vertical iframe {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;    /* 이미지가 박스에 꽉 차게 */
+            border-radius: 6px;
+        }
         .video-item.vertical .video-placeholder {
             aspect-ratio: 9 / 16; /* 세로 비율로 고정 */
         }
