@@ -10,11 +10,62 @@
         @media (max-width: 768px) { .nav-menu { justify-content: flex-start; padding-left: 20px; } }
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
-        header { text-align: center; padding: 100px 0 60px 0; border-bottom: 1px solid #eee; }
+
+        /* --- [수정] 인스타 스타일 헤더 섹션 --- */
+        header { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 40px; 
+            padding: 80px 0 60px 0; 
+            border-bottom: 1px solid #eee; 
+            text-align: left; 
+        }
+        .header-profile-img {
+            flex: 0 0 160px;
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #eee;
+            padding: 4px;
+            background: #fff;
+        }
+        .header-profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .header-text-content h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        .header-text-content p {
+            margin: 8px 0 12px 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .header-hashtags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .header-hashtags span {
+            color: #007bff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; gap: 20px; }
+            .header-hashtags { justify-content: center; }
+        }
+        /* ---------------------------------- */
+
         section { padding: 80px 0 40px 0; border-bottom: 1px solid #f5f5f5; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; border-left: 4px solid #007bff; padding-left: 15px; }
         
-        /* 프로필 전용 스타일 추가 */
+        /* 프로필 전용 스타일 */
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 20px; }
         .profile-photo { flex: 0 0 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
@@ -42,13 +93,24 @@
     </style>
 </head>
 <body>
-<nav class="nav-menu" id="dynamic-nav">
-    </nav>
+<nav class="nav-menu" id="dynamic-nav"></nav>
 
 <div class="container" id="portfolio-contents">
     <header>
-        <h1>안녕하세요, 김성은입니다.</h1>
-        <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
+        <div class="header-profile-img">
+            <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_01.png" alt="김성은 프로필">
+        </div>
+        <div class="header-text-content">
+            <h1>김성은</h1>
+            <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
+            <div class="header-hashtags">
+                <span>#BEAUTY</span>
+                <span>#TECH</span>
+                <span>#HEALTH</span>
+                <span>#FOOD</span>
+                <span>#LIVING</span>
+            </div>
+        </div>
     </header>
 
     <section id="profile">
@@ -58,7 +120,7 @@
         </div>
         <div class="profile-wrapper">
             <div class="profile-photo">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_01.png" alt="프로필 사진">
+                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_02.png" alt="프로필 사진">
             </div>
             <div class="profile-info">
                 <div class="info-block">
@@ -81,7 +143,7 @@
     </section>
 </div>
 
-<footer><p>Copyright 2025. [이름] All rights reserved.</p></footer>
+<footer><p>Copyright 2025. 김성은 All rights reserved.</p></footer>
 
 <script src="data.js"></script>
 <script>
@@ -89,18 +151,15 @@
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
 
-        // 1. 프로필 메뉴를 네비게이션 가장 앞에 추가
         const profileNavLink = document.createElement('a');
         profileNavLink.href = `#profile`;
         profileNavLink.textContent = `PROFILE`;
         navMenu.appendChild(profileNavLink);
 
-        // 2. data.js의 카테고리들을 그 뒤로 추가
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
                 const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
                 
-                // 이미 HTML에 있는 profile 섹션과 겹치지 않게 처리
                 if(cat.id !== "profile") {
                     const section = document.createElement('section'); section.id = cat.id;
                     let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
