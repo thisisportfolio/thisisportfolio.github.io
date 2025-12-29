@@ -11,7 +11,7 @@
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        /* --- 헤더 섹션 --- */
+        /* --- 헤더 --- */
         header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px 0; border-bottom: 1px solid #eee; text-align: left; }
         .header-profile-img { flex: 0 0 160px; width: 160px; height: 160px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; background: #fff; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -27,25 +27,21 @@
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.5rem; }
         
-        /* --- [수정] PROFILE 및 8개 항목 레이아웃 --- */
+        /* --- PROFILE 상세 스타일 --- */
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 15px; }
         .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
 
-        .info-block { 
-            display: flex;         
-            gap: 15px;             
-            margin-bottom: 18px; /* 간격 살짝 조절 */
-            align-items: flex-start;
-        }
+        .info-block { display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start; }
         .info-block h3 { 
-            flex: 0 0 110px;       /* 타이틀 너비 유지 */
+            flex: 0 0 110px; 
             font-size: 0.95rem; 
-            color: #333;           /* 검정색 */
-            font-weight: 700;      /* 기존과 비슷한 적당한 굵기 */
+            color: #333; 
+            font-weight: 700; 
             margin: 0; 
             padding-top: 1px;
+            letter-spacing: 0.5px;
         }
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { 
@@ -65,7 +61,7 @@
             .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 3px; margin-bottom: 5px; }
         }
 
-        /* 영상 그리드 등 나머지 스타일 유지 */
+        /* 공통 비디오 그리드 스타일 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; display: flex; flex-direction: column; align-items: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -109,59 +105,42 @@
             </div>
             <div class="profile-info">
                 <div class="info-block">
-                    <h3>CAREER</h3>
-                    <ul class="info-list">
-                        <li>네이버 쇼핑라이브 뷰티/테크 전문 진행</li>
-                        <li>카카오/쿠팡 스페셜 라이브 다수 진행</li>
-                    </ul>
+                    <h3>NAME</h3>
+                    <ul class="info-list"><li>김성은(Sung Eun Kim)</li></ul>
                 </div>
                 <div class="info-block">
-                    <h3>BROADCAST</h3>
-                    <ul class="info-list">
-                        <li>현대홈쇼핑 모바일 라이브 게스트</li>
-                        <li>CJ온스타일 라이브 커머스 진행</li>
-                    </ul>
+                    <h3>BIRTH</h3>
+                    <ul class="info-list"><li>1991. 08. 27</li></ul>
                 </div>
                 <div class="info-block">
-                    <h3>BRAND</h3>
+                    <h3>PHYSICAL</h3>
+                    <ul class="info-list"><li>164cm / 48kg</li></ul>
+                </div>
+                <div class="info-block">
+                    <h3>PHONE</h3>
+                    <ul class="info-list"><li>010-8853-0117</li></ul>
+                </div>
+                <div class="info-block">
+                    <h3>INSTAGRAM</h3>
+                    <ul class="info-list"><li>@curator.sung</li></ul>
+                </div>
+                <div class="info-block">
+                    <h3>E-MAIL</h3>
+                    <ul class="info-list"><li>kse0117@kakao.com</li></ul>
+                </div>
+                <div class="info-block">
+                    <h3>LICENSE</h3>
                     <ul class="info-list">
-                        <li>삼성전자 Galaxy S 시리즈 런칭 라이브</li>
-                        <li>LG전자 가전 브랜드 데이 진행</li>
+                        <li>화장품상담전문가 2급(한국화장품전문가협회)</li>
+                        <li>브랜드기획자 1급, 코스메틱머천다이징전문가 1급</li>
+                        <li>뷰티마케팅전문가 1급(한국마케팅협회)</li>
                     </ul>
                 </div>
                 <div class="info-block">
                     <h3>EDUCATION</h3>
                     <ul class="info-list">
-                        <li>OO대학교 신문방송학과 졸업</li>
-                        <li>이원석 아카데미 심화과정 수료</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>LICENSE</h3>
-                    <ul class="info-list">
-                        <li>스피치 지도사 1급</li>
-                        <li>퍼스널 컬러 컨설턴트 자격</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>SKILLS</h3>
-                    <ul class="info-list">
-                        <li>라이브 커머스 큐시트 기획</li>
-                        <li>영상 편집 (Premiere Pro)</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>SNS</h3>
-                    <ul class="info-list">
-                        <li>Instagram: @seongeun_sh</li>
-                        <li>YouTube: 성은의 라이브로그</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>CONTACT</h3>
-                    <ul class="info-list">
-                        <li>E-mail: example@gmail.com</li>
-                        <li>Phone: 010-1234-5678</li>
+                        <li>고려대학교(안암) 보건학사</li>
+                        <li>한국쇼호스트협회 공채반 졸업</li>
                     </ul>
                 </div>
             </div>
