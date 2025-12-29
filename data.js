@@ -35,10 +35,57 @@ const videoData = [
       { title: "에코벡스(ECOVACS)", link: "https://www.thehyundai.com/front/bda/BDALiveBrodViewer.thd?pLiveBfmtNo=202504180001", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_10_ecovacs", details: "더현대\n로봇청소기" }
     ]
   },
-  { id: "cat3", category: "HEALTH", subDesc: "건강한 라이프스타일을 제안합니다.", summary: "건강기능식품 및 헬스케어 브랜드와 함께한 프로젝트입니다.", items: [] },
-  { id: "cat4", category: "FOOD", subDesc: "맛있는 경험을 생생하게 전달합니다.", summary: "신선식품, 가공식품 등 푸드 라이브 모음입니다.", items: [] },
-  { id: "cat5", category: "LIVING", subDesc: "삶의 질을 높이는 리빙 아이템", summary: "가전, 인테리어, 생활용품 카테고리입니다.", items: [] },
-  { id: "cat6", category: "FASHION", subDesc: "스타일과 트렌드를 제안합니다.", summary: "의류, 잡화, 패션 액세서리 방송입니다.", items: [] },
-  { id: "cat7", category: "TRAVEL", subDesc: "여행의 설렘을 공유합니다.", summary: "숙박, 항공, 투어 등 여행 상품 프로젝트입니다.", items: [] },
-  { id: "cat8", category: "LECTURE", subDesc: "지식과 정보를 나누는 시간", summary: "교육, 강연, 웨비나 진행 이력입니다.", items: [] }
+  { id: "cat3",
+   category: "HEALTH",
+   subDesc: " 전문적이고 공감하는 건강 이야기로 브랜딩과 매출을 위한 방송을  진행합니다.",
+   summary: "연세생활건강, 뉴트리원, 농심 라이필, 농협 한삼인, 리큐젠유산균, 일동제약, 장인정신에브리데이, 뉴트루코리아 등의 브랜드와도 함께하고 있습니다.",
+   items: [
+
+     
+   ]
+  },
+  { id: "cat4",
+    category: "FOOD",
+    subDesc: "오감을 만족시키는 먹방으로 브랜딩과 매출을 위한 방송을  진행합니다",
+    summary: "동서식품, 매일우유, 청정원, 우메종, 기미상회, 미미상회,  미쁨생활건강, 과일세트, 고기세트, 굴비, 정성곳간 등과 같은 브랜드와도 함께하고 있습니다.",
+    items: [
+
+      
+    ]
+  },
+  { id: "cat5",
+   category: "LIVING",
+   subDesc: "생활의 지혜를 공유합니다, 코너 속의 코너! 알.쓸.신.잡  MC!",
+   summary: "AMT, 로얄코펜하겐, 현대의료기, 콕시클, 깃든, 콕시클코리아, 캄포도마, 디베르, 버틀러, 에티카,  벨르아망 등과 같은 브랜드와도 함께하고 있습니다.",
+   items: [
+
+     
+   ] 
+  },
+  { id: "cat6", 
+   category: "FASHION", 
+   subDesc: "트랜디하며 편안한 방송을 하겠습니다. OOTD에 맞는 코디로 브랜딩과 매출을 위한 방송을 진행합니다.", 
+   summary: "THURSDAY ISLAND(써스데이아일랜드), CC COLLECT(씨씨콜렉트), 올리브데올리브, DEWL(듀엘), 벤셔먼 등의 브랜드와도 함께하고 있습니다.", 
+   items: [
+
+     
+   ]
+  },
+  { id: "cat7", 
+   category: "TRAVEL",
+   subDesc: "여행의 설렘을 공유합니다.",
+   summary: "숙박, 항공, 투어 등 여행 상품 프로젝트입니다.",
+   items: [
+
+     
+   ]
+  },
+  { id: "cat8",
+   category: "LECTURE", 
+   subDesc: "지식과 정보를 나누는 시간", 
+   summary: "교육, 강연, 웨비나 진행 이력입니다.",
+   items: [
+
+     
+   ] }
 ];
