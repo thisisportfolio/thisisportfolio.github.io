@@ -30,17 +30,22 @@
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
+        
+        /* 인스타그램 파란 링크 스타일 */
+        .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
+        .insta-link:hover { text-decoration: underline; }
 
-        .app-grid { display: flex; gap: 18px; margin-top: 5px; }
-        .app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 6px; }
-        .app-icon { width: 50px; height: 50px; border-radius: 11px; display: flex; justify-content: center; align-items: center; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        /* 아이폰 버튼 스타일 (텍스트 제거 버전) */
+        .app-grid { display: flex; gap: 15px; margin-top: 2px; }
+        .app-item { text-decoration: none; }
+        .app-icon { width: 48px; height: 48px; border-radius: 11px; display: flex; justify-content: center; align-items: center; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .app-item:hover .app-icon { transform: translateY(-3px); }
         .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); position: relative; }
         .icon-message::after { content: ''; width: 22px; height: 18px; background: white; border-radius: 9px; }
         .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }
         .icon-mail::after { content: '✉'; color: white; font-size: 24px; }
-        .app-label { font-size: 0.7rem; color: #333; font-weight: 500; }
 
+        /* 비디오 섹션 스타일 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -80,11 +85,11 @@
                 <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
-                        <a href="sms:010-8853-0117" class="app-item"><div class="app-icon icon-message"></div><span class="app-label">메시지</span></a>
-                        <a href="mailto:kse0117@kakao.com" class="app-item"><div class="app-icon icon-mail"></div><span class="app-label">메일</span></a>
+                        <a href="sms:010-8853-0117" class="app-item"><div class="app-icon icon-message"></div></a>
+                        <a href="mailto:kse0117@kakao.com" class="app-item"><div class="app-icon icon-mail"></div></a>
                     </div>
                 </div>
-                <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" style="color:#555; text-decoration:none;">@curator.sung</a></li></ul></div>
+                <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" class="insta-link">@curator.sung</a></li></ul></div>
                 <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급, 코스메틱머천다이징전문가 1급, 뷰티마케팅전문가 1급</li></ul></div>
                 <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li><li>한국쇼호스트협회 공채반 수료</li></ul></div>
             </div>
