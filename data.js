@@ -25,14 +25,14 @@ const videoData = [
     items: [
       { title: "휴롬(HUROM)", link: "https://m.hurom.co.kr/broadcast/live_view.php?contentId=97wm0vno", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_01_hurom.png", details: "공식몰\n착즙기" },
       { title: "유라(JURA)", link: "https://view.shoppinglive.naver.com/replays/1254206?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_02_jura.png", details: "네이버 더현대\n스위스 명품 커피머신" },
-      { title: "샤크닌자(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1662767?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_03_sharkninja_vacuum", details: "네이버\n3241무선청소기" },
-      { title: "샤크닌자(SHARK)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_04_sharkninja_blender", details: "네이버\n포터블블라스트블렌더" },
-      { title: "위닉스(WINIX)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_05_winix_01", details: "네이버\n공기청정기" },
-      { title: "샤크뷰티(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1384898?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_06_sharkbeauty", details: "네이버\n샤크뷰티플렉스스타일" },
+      { title: "샤크닌자(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1662767?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_03_sharkninja_vacuum.png", details: "네이버\n3241무선청소기" },
+      { title: "샤크닌자(SHARK)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_04_sharkninja_blender.png", details: "네이버\n포터블블라스트블렌더" },
+      { title: "위닉스(WINIX)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_05_winix_01.png", details: "네이버\n공기청정기" },
+      { title: "샤크뷰티(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1384898?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_06_sharkbeauty.png", details: "네이버\n샤크뷰티플렉스스타일" },
       { title: "샤크닌자(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1515093?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/", details: "네이버\n멀티쿠커" },
-      { title: "위닉스(WINIX)", link: "https://view.shoppinglive.naver.com/replays/1634006?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_08_winix_02", details: "네이버\n제습기 공기청정기 건조기" },
-      { title: "TCL", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_09_tcl", details: "쿠팡\nTV(벽걸이,스탠드)" },
-      { title: "에코벡스(ECOVACS)", link: "https://www.thehyundai.com/front/bda/BDALiveBrodViewer.thd?pLiveBfmtNo=202504180001", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_10_ecovacs", details: "더현대\n로봇청소기" }
+      { title: "위닉스(WINIX)", link: "https://view.shoppinglive.naver.com/replays/1634006?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_08_winix_02.png", details: "네이버\n제습기 공기청정기 건조기" },
+      { title: "TCL", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_09_tcl.png", details: "쿠팡\nTV(벽걸이,스탠드)" },
+      { title: "에코벡스(ECOVACS)", link: "https://www.thehyundai.com/front/bda/BDALiveBrodViewer.thd?pLiveBfmtNo=202504180001", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_10_ecovacs.png", details: "더현대\n로봇청소기" }
     ]
   },
   { id: "cat3",
