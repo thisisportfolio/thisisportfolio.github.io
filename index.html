@@ -19,6 +19,9 @@
         section { padding: 25px 0; border-bottom: 1px solid #f5f5f5; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.4rem; }
+        
+        /* subDesc 스타일 */
+        .section-title-wrap span { font-size: 0.85rem; color: #888; font-weight: 400; }
 
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; }
         .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
@@ -30,13 +33,7 @@
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
 
-        /* 인스타 링크 색상 보정 (방문 후에도 파란색 유지) */
-        .insta-link, .insta-link:visited { 
-            color: #007bff !important; 
-            text-decoration: none; 
-            font-weight: 600; 
-            transition: 0.2s;
-        }
+        .insta-link, .insta-link:visited { color: #007bff !important; text-decoration: none; font-weight: 600; transition: 0.2s; }
         .insta-link:hover { text-decoration: underline; opacity: 0.8; }
 
         .app-grid { display: flex; gap: 15px; margin-top: 5px; align-items: center; }
@@ -128,12 +125,37 @@
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
         const pLink = document.createElement('a'); pLink.href = "#profile"; pLink.textContent = "PROFILE"; navMenu.appendChild(pLink);
+        
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
                 const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
                 const section = document.createElement('section'); section.id = cat.id;
-                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 30px 0;">준비 중입니다.</p>`;
-                section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
+                
+                // [기능 추가] 링크가 있을 때만 새창으로 연결, 없으면 제자리 유지
+                let itemsHtml = (cat.items && cat.items.length > 0) ? 
+                    `<div class="video-grid">${cat.items.map(item => `
+                        <div class="video-item">
+                            <a href="${item.link ? item.link : 'javascript:void(0);'}" 
+                               ${item.link ? 'target="_blank"' : ''} 
+                               class="thumb-link" 
+                               style="${item.link ? '' : 'cursor:default;'}">
+                                <img src="${item.img}">
+                                <div class="play-overlay"><span>▶</span></div>
+                            </a>
+                            <p>${item.title}</p>
+                            <div class="video-details">${item.details}</div>
+                        </div>`).join('')}</div>` 
+                    : `<p style="color:#ccc; text-align:center; padding: 30px 0;">준비 중입니다.</p>`;
+                
+                // [기능 추가] subDesc 반영
+                section.innerHTML = `
+                    <div class="section-title-wrap">
+                        <h2>${cat.category}</h2>
+                        <span>${cat.subDesc || ""}</span>
+                    </div>
+                    ${itemsHtml}
+                    <div class="category-summary">${cat.summary}</div>`;
+                
                 contents.appendChild(section);
             });
         }
