@@ -31,7 +31,7 @@ const videoData = [
       { title: "샤크뷰티(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1384898?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_06_sharkbeauty.png", details: "네이버\n샤크뷰티플렉스스타일" },
       { title: "샤크닌자(SHARK)", link: "https://view.shoppinglive.naver.com/replays/1515093?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/", details: "네이버\n멀티쿠커" },
       { title: "위닉스(WINIX)", link: "https://view.shoppinglive.naver.com/replays/1634006?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_08_winix_02.png", details: "네이버\n제습기 공기청정기 건조기" },
-      { title: "TCL", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_09_tcl.png", details: "쿠팡\nTV(벽걸이,스탠드)" },
+      { title: "TCL", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_09_tcl.png", details: "쿠팡스페셜라이브\nTV(벽걸이,스탠드)" },
       { title: "에코벡스(ECOVACS)", link: "https://www.thehyundai.com/front/bda/BDALiveBrodViewer.thd?pLiveBfmtNo=202504180001", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_10_ecovacs.png", details: "더현대\n로봇청소기" }
     ]
   },
@@ -62,7 +62,7 @@ const videoData = [
       { title: "이마트몰", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_07_emartmall.png", details: "네이버\n낚지볶음밥, 우유, 골뱅이 등" },
       { title: "정성곳간", link: "https://view.shoppinglive.naver.com/replays/1508163?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_08_dogani.png", details: "네이버\n한우스지 도가니탕" },
       { title: "바오담", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_09_baodam.png", details: "네이버\n도라지정과, 약과, 강정 등" },
-      { title: "프롬잇(FROMEAT)", link: "https://liveh5.coupang.com/plive/915829?pType=live&id=915829&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=915829&lptag=CFM96485063&itime=20251229130040&pageType=LIVE%2520COMMERCE&pageValue=915829&wTime=20251229130040&redirect=landing&mcid=5141d7fc70bc4872bcabb91d87742c24&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_10_fromeat.png", details: "쿠팡\n(발렌타인특집)저당초코, 스낵" }
+      { title: "프롬잇(FROMEAT)", link: "https://liveh5.coupang.com/plive/915829?pType=live&id=915829&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=915829&lptag=CFM96485063&itime=20251229130040&pageType=LIVE%2520COMMERCE&pageValue=915829&wTime=20251229130040&redirect=landing&mcid=5141d7fc70bc4872bcabb91d87742c24&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_10_fromeat.png", details: "쿠팡스페셜라이브\n(발렌타인특집)저당초코, 스낵" }
     
     ]
   },
@@ -71,6 +71,16 @@ const videoData = [
    subDesc: "생활의 지혜를 공유합니다, 코너 속의 코너! 알.쓸.신.잡  MC!",
    summary: "AMT, 로얄코펜하겐, 현대의료기, 콕시클, 깃든, 콕시클코리아, 캄포도마, 디베르, 버틀러, 에티카,  벨르아망 등과 같은 브랜드와도 함께하고 있습니다.",
    items: [
+      { title: "시크릿데이", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_01_secretday.png", details: "11번가 PGM 우리집새로고침\n여성용품" }
+      { title: "포트메리온", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_02_portmeirion.png", details: "쿠팡스페셜라이브\n선물세트" }
+      { title: "유시몰", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_03_euthymol.png", details: "카카오\n치약" }
+      { title: "한샘 샘키즈", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_04_hansam.png", details: "네이버\n침대, 수납장 등" }
+      { title: "코코도르", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_05_cocodor.png", details: "쿠팡스페셜라이브\n"성은이망극한쇼핑" 크리스마스 디퓨저" }
+      { title: "피지 모락셀라 세제", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_06_fiji.png", details: "카카오\n모락셀라부스터 런칭, 섬유유연제" }
+      { title: "누잠", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_07_nuzam.png", details: "네이버\n토퍼매트리스, 침구류" }
+      { title: "AMT", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_08_amt.png", details: "더현대\n스테인레스 냄비, 웍" }
+      { title: "쿠첸", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_09_cuchen.png", details: "네이버\n압력밥솥" }
+      { title: "보국전자", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_10_bokuk.png", details: "쿠팡스페셜라이브\n써큘레이터, 선풍기" }
 
      
    ] 
@@ -80,6 +90,7 @@ const videoData = [
    subDesc: "트랜디하며 편안한 방송을 하겠습니다. OOTD에 맞는 코디로 브랜딩과 매출을 위한 방송을 진행합니다.", 
    summary: "THURSDAY ISLAND(써스데이아일랜드), CC COLLECT(씨씨콜렉트), 올리브데올리브, DEWL(듀엘), 벤셔먼 등의 브랜드와도 함께하고 있습니다.", 
    items: [
+      { title: "", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_01_.png", details: "\n" }
 
      
    ]
