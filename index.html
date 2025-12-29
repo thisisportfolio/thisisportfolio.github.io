@@ -13,6 +13,19 @@
         header { text-align: center; padding: 100px 0 60px 0; border-bottom: 1px solid #eee; }
         section { padding: 80px 0 40px 0; border-bottom: 1px solid #f5f5f5; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; border-left: 4px solid #007bff; padding-left: 15px; }
+        
+        /* 프로필 전용 스타일 추가 */
+        .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 20px; }
+        .profile-photo { flex: 0 0 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
+        .profile-info { flex: 1; }
+        .info-block { margin-bottom: 25px; }
+        .info-block h3 { font-size: 1.1rem; color: #007bff; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .info-list { list-style: none; padding: 0; margin: 0; }
+        .info-list li { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.6; position: relative; padding-left: 15px; }
+        .info-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
+        @media (max-width: 768px) { .profile-wrapper { flex-direction: column; align-items: center; } .profile-photo { flex: 0 0 auto; width: 100%; max-width: 300px; } }
+
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 10px 5px 20px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; display: flex; flex-direction: column; align-items: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -29,20 +42,71 @@
     </style>
 </head>
 <body>
-<nav class="nav-menu" id="dynamic-nav"></nav>
-<div class="container" id="portfolio-contents"><header><h1>안녕하세요, [이름]입니다.</h1><p>영상으로 가치를 전달하는 쇼호스트입니다.</p></header></div>
+<nav class="nav-menu" id="dynamic-nav">
+    </nav>
+
+<div class="container" id="portfolio-contents">
+    <header>
+        <h1>안녕하세요, 김성은입니다.</h1>
+        <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
+    </header>
+
+    <section id="profile">
+        <div class="section-title-wrap">
+            <h2>PROFILE</h2>
+            <span class="sub-desc">"전문성과 신뢰를 바탕으로 소통합니다."</span>
+        </div>
+        <div class="profile-wrapper">
+            <div class="profile-photo">
+                <img src=".jpg" alt="프로필 사진">
+            </div>
+            <div class="profile-info">
+                <div class="info-block">
+                    <h3>CAREER</h3>
+                    <ul class="info-list">
+                        <li>네이버 쇼핑라이브 뷰티/테크 전문 진행</li>
+                        <li>카카오/쿠팡 스페셜 라이브 다수 진행</li>
+                        <li>주요 브랜드(삼성, LG, 휴롬 등) 협업</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>LICENSE & SKILLS</h3>
+                    <ul class="info-list">
+                        <li>스피치 지도사 자격증 보유</li>
+                        <li>쇼호스트 전문 과정 수료</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 <footer><p>Copyright 2025. [이름] All rights reserved.</p></footer>
+
 <script src="data.js"></script>
 <script>
     window.onload = function() {
-        const navMenu = document.getElementById('dynamic-nav'); const contents = document.getElementById('portfolio-contents');
+        const navMenu = document.getElementById('dynamic-nav'); 
+        const contents = document.getElementById('portfolio-contents');
+
+        // 1. 프로필 메뉴를 네비게이션 가장 앞에 추가
+        const profileNavLink = document.createElement('a');
+        profileNavLink.href = `#profile`;
+        profileNavLink.textContent = `PROFILE`;
+        navMenu.appendChild(profileNavLink);
+
+        // 2. data.js의 카테고리들을 그 뒤로 추가
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
                 const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
-                const section = document.createElement('section'); section.id = cat.id;
-                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
-                section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2><span class="sub-desc">"${cat.subDesc}"</span></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
-                contents.appendChild(section);
+                
+                // 이미 HTML에 있는 profile 섹션과 겹치지 않게 처리
+                if(cat.id !== "profile") {
+                    const section = document.createElement('section'); section.id = cat.id;
+                    let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
+                    section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2><span class="sub-desc">"${cat.subDesc}"</span></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
+                    contents.appendChild(section);
+                }
             });
         }
     };
