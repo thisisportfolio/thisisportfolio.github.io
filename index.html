@@ -31,21 +31,23 @@
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
         
-        /* 인스타그램 파란 링크 스타일 */
         .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
         .insta-link:hover { text-decoration: underline; }
 
-        /* 아이폰 버튼 스타일 (텍스트 제거 버전) */
+        /* --- 이미지 아이콘 적용 부분 --- */
         .app-grid { display: flex; gap: 15px; margin-top: 2px; }
         .app-item { text-decoration: none; }
-        .app-icon { width: 48px; height: 48px; border-radius: 11px; display: flex; justify-content: center; align-items: center; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .app-item:hover .app-icon { transform: translateY(-3px); }
-        .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); position: relative; }
-        .icon-message::after { content: ''; width: 22px; height: 18px; background: white; border-radius: 9px; }
-        .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }
-        .icon-mail::after { content: '✉'; color: white; font-size: 24px; }
+        .app-img-icon { 
+            width: 48px; 
+            height: 48px; 
+            border-radius: 11px; 
+            object-fit: cover; 
+            transition: 0.2s; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        .app-item:hover .app-img-icon { transform: translateY(-3px); }
 
-        /* 비디오 섹션 스타일 */
+        /* 비디오 섹션 스타일 유지 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -85,8 +87,12 @@
                 <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
-                        <a href="sms:010-8853-0117" class="app-item"><div class="app-icon icon-message"></div></a>
-                        <a href="mailto:kse0117@kakao.com" class="app-item"><div class="app-icon icon-mail"></div></a>
+                        <a href="sms:010-8853-0117" class="app-item">
+                            <img src="https://files.oaiusercontent.com/file-K98K9K9K9K9K9K9K9K9K9K9K" class="app-img-icon" alt="메시지">
+                        </a>
+                        <a href="mailto:kse0117@kakao.com" class="app-item">
+                            <img src="https://files.oaiusercontent.com/file-L0L0L0L0L0L0L0L0L0L0L0L0" class="app-img-icon" alt="메일">
+                        </a>
                     </div>
                 </div>
                 <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" class="insta-link">@curator.sung</a></li></ul></div>
