@@ -95,7 +95,6 @@ const videoData = [
       { title: "주크(ZOOC)", link: "https://view.shoppinglive.naver.com/replays/1429110?tr=blim&fm=shoppinglive&sn=bridge", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_03_zooc_01.png", details: "네이버\n" },
       { title: "도호(DOHO)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_04_doho.png", details: "현대홈쇼핑 현대몰\n" },
       { title: "보네뜨", link: "https://view.shoppinglive.naver.com/replays/1195078?dtm_medium=share&dtm_source=liveviewer&fm=shoppinglive&from=share&sn=share&tr=lim", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_05_bonnette.png", details: "네이버\n" }
-
     ]
   },
   {
@@ -106,7 +105,14 @@ const videoData = [
     items: []
   },
   {
-    id: "cat8",
+    id: "cat8", // 신규 추가
+    category: "SHORT-FORM REVIEW",
+    subDesc: "1분 안에 담아내는 강력한 몰입감",
+    summary: "제품의 핵심 포인트를 빠르게 파악하여 감각적인 숏폼 영상으로 풀어냅니다. 릴스, 쇼츠 등 플랫폼 최적화 연출로 시청자의 시선을 사로잡습니다.",
+    items: []
+  },
+  {
+    id: "cat9", // 기존 cat8에서 id 변경
     category: "LECTURE",
     subDesc: "지식과 정보를 나누는 시간",
     summary: "교육, 강연, 웨비나 진행 이력입니다.",
