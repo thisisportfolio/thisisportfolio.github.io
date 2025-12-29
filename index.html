@@ -29,13 +29,10 @@
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
-        
-        .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
-        .insta-link:hover { text-decoration: underline; }
 
-        /* SVG 아이콘 정렬 및 스타일 */
+        /* 아이콘 중앙 정렬 보정 */
         .app-grid { display: flex; gap: 12px; margin-top: 2px; }
-        .app-item { text-decoration: none; width: 44px; height: 44px; display: block; transition: 0.2s; }
+        .app-item { text-decoration: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
         .app-item svg { width: 100%; height: 100%; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display: block; }
         .app-item:hover { transform: translateY(-3px); }
 
@@ -82,15 +79,15 @@
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
                         <a href="sms:010-8853-0117" class="app-item">
-                            <svg viewBox="0 0 66.145836 66.145836" version="1.1">
+                            <svg viewBox="0 0 66.2 66.2" version="1.1">
                                 <defs>
                                     <linearGradient id="lg_msg" x1="0%" y1="100%" x2="0%" y2="0%">
                                         <stop style="stop-color:#0cbd2a;stop-opacity:1" offset="0" />
                                         <stop style="stop-color:#5bf675;stop-opacity:1" offset="1" />
                                     </linearGradient>
                                 </defs>
-                                <rect ry="14.5" rx="14.5" y="0" x="0" height="66.1" width="66.1" style="fill:url(#lg_msg);" />
-                                <path d="m 33,11.4 a 24.2,20.2 0 0 0 -24.2,20.2 24.2,20.2 0 0 0 11.7,17.3 27.3,20.2 0 0 1 -4.2,5.9 23.8,20.2 0 0 0 9.8,-3.8 24.2,20.2 0 0 0 6.8,0.8 24.2,20.2 0 0 0 24.2,-20.2 24.2,20.2 0 0 0 -24.2,-20.2 z" style="fill:#ffffff;" />
+                                <rect ry="14.5" rx="14.5" y="0" x="0" height="66.2" width="66.2" style="fill:url(#lg_msg);" />
+                                <path d="m 33.1,16.5 c -10.5,0 -19,7.6 -19,17 c 0,5.4 2.8,10.2 7.1,13.4 c -0.6,2.3 -2.2,5.1 -3.8,6.8 c 4.1,-0.3 8.3,-2.2 11,-4.2 c 1.5,0.4 3.1,0.6 4.7,0.6 c 10.5,0 19,-7.6 19,-17 c 0,-9.4 -8.5,-17 -19,-17 z" style="fill:#ffffff;" />
                             </svg>
                         </a>
                         <a href="mailto:kse0117@kakao.com" class="app-item">
@@ -101,8 +98,8 @@
                                         <stop style="stop-color:#5770ff;stop-opacity:1" offset="1" />
                                     </linearGradient>
                                 </defs>
-                                <path style="fill:url(#lg_mail);" d="m 21.6,0 48.6,0 c 11.4,0 20.6,9.2 20.6,20.6 l 0,48.6 c 0,11.4 -9.2,20.6 -20.6,20.6 l -48.6,0 C 10.2,90 1,80.7 1,69.2 l 0,-48.6 C 1,9.2 10.2,0 21.6,0 z" />
-                                <path style="fill:#ffffff;" d="M 20.7,36.5 C 20.2,36.5 19.8,36.6 19.3,36.8 L 27.7,45.5 36.2,54.3 36.6,54.7 37.1,55.2 44.4,62.7 C 44.5,62.7 44.8,63.1 45.1,63.2 45.4,63.4 45.8,63.5 46.2,63.5 46.6,63.5 47,63.4 47.4,63.2 47.7,63.1 47.8,62.9 48.1,62.6 L 56.6,53.8 65.2,44.9 73.5,36.4 C 73,36.1 72.4,36 71.8,36 Z m -2.5,1.1 c -0.9,0.9 -1.4,2.1 -1.4,3.6 L 16.8,69.8 C 16.8,71 17.1,72 17.8,72.9 L 18.9,71.7 27.8,63.1 35.6,55.5 35.4,55.3 26.8,46.5 18.2,37.6 Z m 57.1,0.3 -8.3,8.6 -8.5,8.8 -0.1,0.1 8.1,7.9 8.8,8.6 0.5,0.5 c 0.4,-0.7 0.7,-1.7 0.7,-2.7 L 76.5,41.2 C 76.5,39.9 76,38.7 75.3,37.9 Z M 36.5,56.6 28.6,64.2 19.8,72.8 18.6,73.9 c 0.6,0.4 1.3,0.6 2,0.6 l 51.7,0 c 0.8,0 1.6,-0.3 2.3,-0.8 l -0.5,-0.5 -8.8,-8.6 -8.1,-7.8 -7.3,7.5 c -0.4,0.3 -0.7,0.6 -1,0.7 -0.6,0.3 -1.3,0.5 -2,0.5 -0.7,0 -1.4,-0.3 -2,-0.6 -0.3,-0.1 -0.5,-0.3 -0.8,-0.6 z" transform="translate(-10,-10)" />
+                                <rect ry="20" rx="20" y="0" x="0" height="90" width="90" style="fill:url(#lg_mail);" />
+                                <path style="fill:#ffffff;" d="M 25,32 C 24.5,32 24.1,32.1 23.6,32.3 L 45,54.3 L 66.4,32.3 C 65.9,32.1 65.5,32 65,32 Z M 21,34 c -1,1 -1.5,2.5 -1.5,4 l 0,26 c 0,1.5 0.5,3 1.5,4 l 18,-18 z m 50,0 -18,18 18,18 c 1,-1 1.5,-2.5 1.5,-4 l 0,-26 c 0,-1.5 -0.5,-3 -1.5,-4 z M 45,57 23,79 c 0.5,0.5 1,0.5 2,0.5 l 40,0 c 1,0 1.5,-0.1 2,-0.5 z" />
                             </svg>
                         </a>
                     </div>
