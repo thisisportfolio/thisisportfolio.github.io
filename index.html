@@ -6,158 +6,108 @@
     <style>
         body { font-family: 'Pretendard', sans-serif; background: #fff; color: #333; margin: 0; padding: 0; scroll-behavior: smooth; word-break: keep-all; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        
-        /* --- PROFILE 상세 스타일 (정렬 수정) --- */
-        .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 15px; }
-        .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
-        
-        .profile-info { flex: 1; }
+        .nav-menu { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
+        .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; transition: 0.2s; }
+        .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        .info-block { 
-            display: flex; 
-            gap: 15px; 
-            margin-bottom: 20px; 
-            align-items: flex-start; /* 상단 기준 정렬 */
-        }
-        
-        .info-block h3 { 
-            flex: 0 0 110px; 
-            font-size: 0.95rem; 
-            color: #333; 
-            font-weight: 700; 
-            margin: 0; 
-            /* li 텍스트와 높이를 맞추기 위한 패딩 */
-            padding-top: 2px; 
-            letter-spacing: 0.5px;
-            line-height: 1.4; /* li와 동일한 높이 설정 */
-        }
-        
-        .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
-        .info-list li { 
-            margin-bottom: 6px; 
-            font-size: 0.92rem; 
-            line-height: 1.4; /* h3와 높이 통일 */
-            position: relative; 
-            padding-left: 14px; 
-            color: #555;
-        }
-        
-        /* 불렛 포인트 위치 세밀 조정 */
-        .info-list li::before { 
-            content: "•"; 
-            position: absolute; 
-            left: 0; 
-            top: 0; /* 텍스트 첫 줄 상단에 고정 */
-            color: #007bff; 
-        }
-
-        /* 아이폰 앱 버튼 섹션 정렬 */
-        .contact-content { flex: 1; }
-        .app-grid { display: flex; gap: 20px; align-items: center; }
-        .app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 6px; }
-        
-        .app-icon {
-            width: 52px; height: 52px; border-radius: 11px;
-            display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s;
-        }
-        .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); position: relative; }
-        .icon-message::after { content: ''; width: 24px; height: 20px; background: white; border-radius: 10px; }
-        .icon-message::before { 
-            content: ''; position: absolute; bottom: 15px; left: 15px;
-            border-right: 7px solid white; border-bottom: 7px solid transparent; transform: rotate(10deg);
-        }
-        .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }
-        .icon-mail::after { content: '✉'; color: white; font-size: 26px; }
-
-        @media (max-width: 768px) { 
-            .profile-wrapper { flex-direction: column; align-items: center; } 
-            .info-block { flex-direction: column; gap: 5px; width: 100%; }
-            .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 3px; }
-        }
-
-        /* 나머지 헤더/비디오 스타일은 유지 */
         header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px 0; border-bottom: 1px solid #eee; }
         .header-profile-img { flex: 0 0 160px; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
-        footer { text-align: center; padding: 60px 0; color: #bbb; }
+        .header-text-content h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
+        .header-text-content p { margin: 8px 0; color: #555; }
+
+        section { padding: 40px 0; border-bottom: 1px solid #f5f5f5; }
+        .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 25px; border-left: 4px solid #007bff; padding-left: 15px; }
+        .section-title-wrap h2 { margin: 0; font-size: 1.5rem; }
+
+        .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; }
+        .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
+        .profile-info { flex: 1; }
+
+        .info-block { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 2px; line-height: 1.4; letter-spacing: 0.5px; }
+        .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
+        .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
+        .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
+
+        .app-grid { display: flex; gap: 18px; margin-top: 5px; }
+        .app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 6px; }
+        .app-icon { width: 50px; height: 50px; border-radius: 11px; display: flex; justify-content: center; align-items: center; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .app-item:hover .app-icon { transform: translateY(-3px); }
+        .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); position: relative; }
+        .icon-message::after { content: ''; width: 22px; height: 18px; background: white; border-radius: 9px; }
+        .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }
+        .icon-mail::after { content: '✉'; color: white; font-size: 24px; }
+        .app-label { font-size: 0.7rem; color: #333; font-weight: 500; }
+
+        .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
+        .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
+        .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; transition: 0.3s; }
+        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+        .play-overlay span { color: white; font-size: 2.5rem; }
+        .thumb-link:hover .play-overlay { opacity: 1; }
+        .video-item p { margin: 0; font-weight: 700; font-size: 0.95rem; color: #222; }
+        .video-details { margin-top: 8px; font-size: 0.82rem; color: #777; line-height: 1.5; white-space: pre-line; }
+        .category-summary { background: #f8f9fa; padding: 15px 20px; border-radius: 10px; font-size: 0.95rem; color: #555; margin-top: 15px; border-left: 1px solid #eee; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; gap: 20px; }
+            .profile-wrapper { flex-direction: column; align-items: center; }
+            .profile-photo { width: 100%; max-width: 300px; margin-bottom: 20px; }
+            .info-block { flex-direction: column; gap: 5px; width: 100%; }
+            .info-block h3 { flex: none; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+            .video-item { flex: 0 0 75%; }
+        }
+        footer { text-align: center; padding: 60px 0; color: #bbb; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-<div class="container">
+<nav class="nav-menu" id="dynamic-nav"></nav>
+<div class="container" id="portfolio-contents">
     <header>
-        <div class="header-profile-img">
-            <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_01.png" alt="김성은 프로필">
-        </div>
-        <div class="header-text-content">
-            <h1>김성은</h1>
-            <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
-        </div>
+        <div class="header-profile-img"><img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_01.png" alt="김성은"></div>
+        <div class="header-text-content"><h1>김성은</h1><p>영상으로 가치를 전달하는 쇼호스트입니다.</p></div>
     </header>
-
     <section id="profile">
-        <div class="section-title-wrap">
-            <h2>PROFILE</h2>
-        </div>
+        <div class="section-title-wrap"><h2>PROFILE</h2></div>
         <div class="profile-wrapper">
-            <div class="profile-photo">
-                <img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_02.png" alt="프로필 사진">
-            </div>
+            <div class="profile-photo"><img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_02.png"></div>
             <div class="profile-info">
-                <div class="info-block">
-                    <h3>NAME</h3>
-                    <ul class="info-list"><li>김성은 (Sung Eun Kim)</li></ul>
-                </div>
-                <div class="info-block">
-                    <h3>BIRTH</h3>
-                    <ul class="info-list"><li>1991. 08. 27</li></ul>
-                </div>
-                <div class="info-block">
-                    <h3>PHYSICAL</h3>
-                    <ul class="info-list"><li>164cm / 48kg</li></ul>
-                </div>
-                <div class="info-block">
-                    <h3>CONTACT</h3>
-                    <div class="contact-content">
-                        <div class="app-grid">
-                            <a href="sms:010-8853-0117" class="app-item">
-                                <div class="app-icon icon-message"></div>
-                                <span class="app-label">메시지</span>
-                            </a>
-                            <a href="mailto:kse0117@kakao.com" class="app-item">
-                                <div class="app-icon icon-mail"></div>
-                                <span class="app-label">메일</span>
-                            </a>
-                        </div>
+                <div class="info-block"><h3>NAME</h3><ul class="info-list"><li>김성은 (Sung Eun Kim)</li></ul></div>
+                <div class="info-block"><h3>BIRTH</h3><ul class="info-list"><li>1991. 08. 27</li></ul></div>
+                <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
+                <div class="info-block"><h3>CONTACT</h3>
+                    <div class="app-grid">
+                        <a href="sms:010-8853-0117" class="app-item"><div class="app-icon icon-message"></div><span class="app-label">메시지</span></a>
+                        <a href="mailto:kse0117@kakao.com" class="app-item"><div class="app-icon icon-mail"></div><span class="app-label">메일</span></a>
                     </div>
                 </div>
-                <div class="info-block" style="margin-top: 10px;">
-                    <h3>INSTAGRAM</h3>
-                    <ul class="info-list">
-                        <li><a href="https://www.instagram.com/curator.sung" target="_blank" style="color: #555; text-decoration: none;">@curator.sung</a></li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>LICENSE</h3>
-                    <ul class="info-list">
-                        <li>화장품상담전문가 2급, 브랜드기획자 1급</li>
-                        <li>코스메틱머천다이징 1급, 뷰티마케팅 1급</li>
-                    </ul>
-                </div>
-                <div class="info-block">
-                    <h3>EDUCATION</h3>
-                    <ul class="info-list">
-                        <li>고려대학교 (안암) 보건학사 졸업</li>
-                        <li>한국쇼호스트협회 공채반 수료</li>
-                    </ul>
-                </div>
+                <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" style="color:#555; text-decoration:none;">@curator.sung</a></li></ul></div>
+                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급, 코스메틱머천다이징전문가 1급, 뷰티마케팅전문가 1급</li></ul></div>
+                <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li><li>한국쇼호스트협회 공채반 수료</li></ul></div>
             </div>
         </div>
     </section>
 </div>
-
 <footer><p>Copyright 2025. 김성은 All rights reserved.</p></footer>
+<script src="data.js"></script>
+<script>
+    window.onload = function() {
+        const navMenu = document.getElementById('dynamic-nav'); 
+        const contents = document.getElementById('portfolio-contents');
+        const pLink = document.createElement('a'); pLink.href = "#profile"; pLink.textContent = "PROFILE"; navMenu.appendChild(pLink);
+        if (typeof videoData !== 'undefined') {
+            videoData.forEach(cat => {
+                const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
+                const section = document.createElement('section'); section.id = cat.id;
+                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
+                section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
+                contents.appendChild(section);
+            });
+        }
+    };
+</script>
 </body>
 </html>
