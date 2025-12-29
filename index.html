@@ -11,60 +11,61 @@
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        /* --- [수정] 헤더 중앙 정렬 및 밸런스 조정 --- */
-        header { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; /* 전체 요소를 중앙으로 */
-            gap: 50px; 
-            padding: 50px 0; 
-            border-bottom: 1px solid #eee; 
-            text-align: left; 
-        }
-        .header-profile-img { 
-            flex: 0 0 160px; 
-            width: 160px; 
-            height: 160px; 
-            flex-shrink: 0; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            border: 2px solid #eee; 
-            padding: 4px; 
-            background: #fff; 
-        }
+        /* --- 헤더 섹션 --- */
+        header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px 0; border-bottom: 1px solid #eee; text-align: left; }
+        .header-profile-img { flex: 0 0 160px; width: 160px; height: 160px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; background: #fff; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-        
-        .header-text-content { 
-            flex: 0 1 auto; /* 필요한 만큼만 너비 차지 (왼쪽 쏠림 방지) */
-            min-width: 0; 
-        }
+        .header-text-content { flex: 0 1 auto; min-width: 0; }
         .header-text-content h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
         .header-text-content p { margin: 8px 0 12px 0; font-size: 1rem; color: #555; }
         .header-hashtags { display: flex; gap: 10px; flex-wrap: wrap; }
         .header-hashtags span { color: #007bff; font-size: 0.85rem; font-weight: 600; }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; gap: 20px; padding: 40px 0; }
-            .header-hashtags { justify-content: center; }
-            .header-profile-img { flex: 0 0 140px; width: 140px; height: 140px; }
-        }
+        @media (max-width: 600px) { header { flex-direction: column; text-align: center; gap: 20px; padding: 40px 0; } .header-hashtags { justify-content: center; } .header-profile-img { flex: 0 0 140px; width: 140px; height: 140px; } }
 
         /* --- 섹션 여백 --- */
         section { padding: 35px 0 25px 0; border-bottom: 1px solid #f5f5f5; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.5rem; }
         
+        /* --- [수정] PROFILE 및 8개 항목 레이아웃 --- */
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 15px; }
-        .profile-photo { flex: 0 0 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
-        .info-block { margin-bottom: 20px; }
-        .info-block h3 { font-size: 1.1rem; color: #007bff; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .info-list { list-style: none; padding: 0; margin: 0; }
-        .info-list li { margin-bottom: 6px; font-size: 0.95rem; line-height: 1.6; position: relative; padding-left: 15px; }
-        .info-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
-        @media (max-width: 768px) { .profile-wrapper { flex-direction: column; align-items: center; } .profile-photo { flex: 0 0 auto; width: 100%; max-width: 300px; } }
 
+        .info-block { 
+            display: flex;         
+            gap: 15px;             
+            margin-bottom: 18px; /* 간격 살짝 조절 */
+            align-items: flex-start;
+        }
+        .info-block h3 { 
+            flex: 0 0 110px;       /* 타이틀 너비 유지 */
+            font-size: 0.95rem; 
+            color: #333;           /* 검정색 */
+            font-weight: 700;      /* 기존과 비슷한 적당한 굵기 */
+            margin: 0; 
+            padding-top: 1px;
+        }
+        .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
+        .info-list li { 
+            margin-bottom: 4px; 
+            font-size: 0.92rem; 
+            line-height: 1.4; 
+            position: relative; 
+            padding-left: 12px; 
+            color: #555;
+        }
+        .info-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
+
+        @media (max-width: 768px) { 
+            .profile-wrapper { flex-direction: column; align-items: center; } 
+            .profile-photo { flex: 0 0 auto; width: 100%; max-width: 300px; margin-bottom: 30px; } 
+            .info-block { gap: 5px; margin-bottom: 20px; }
+            .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 3px; margin-bottom: 5px; }
+        }
+
+        /* 영상 그리드 등 나머지 스타일 유지 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; display: flex; flex-direction: column; align-items: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -92,11 +93,7 @@
             <h1>김성은</h1>
             <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
             <div class="header-hashtags">
-                <span>#화장품개발</span>
-                <span>#영어,유튜브MC</span>
-                <span>#마케팅</span>
-                <span>#BEAUTY</span>
-                <span>#TECH</span>
+                <span>#BEAUTY</span> <span>#TECH</span> <span>#HEALTH</span> <span>#FOOD</span> <span>#LIVING</span>
             </div>
         </div>
     </header>
@@ -116,14 +113,55 @@
                     <ul class="info-list">
                         <li>네이버 쇼핑라이브 뷰티/테크 전문 진행</li>
                         <li>카카오/쿠팡 스페셜 라이브 다수 진행</li>
-                        <li>주요 브랜드(삼성, LG, 휴롬 등) 협업</li>
                     </ul>
                 </div>
                 <div class="info-block">
-                    <h3>LICENSE & SKILLS</h3>
+                    <h3>BROADCAST</h3>
                     <ul class="info-list">
-                        <li>스피치 지도사 자격증 보유</li>
-                        <li>쇼호스트 전문 과정 수료</li>
+                        <li>현대홈쇼핑 모바일 라이브 게스트</li>
+                        <li>CJ온스타일 라이브 커머스 진행</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>BRAND</h3>
+                    <ul class="info-list">
+                        <li>삼성전자 Galaxy S 시리즈 런칭 라이브</li>
+                        <li>LG전자 가전 브랜드 데이 진행</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>EDUCATION</h3>
+                    <ul class="info-list">
+                        <li>OO대학교 신문방송학과 졸업</li>
+                        <li>이원석 아카데미 심화과정 수료</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>LICENSE</h3>
+                    <ul class="info-list">
+                        <li>스피치 지도사 1급</li>
+                        <li>퍼스널 컬러 컨설턴트 자격</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>SKILLS</h3>
+                    <ul class="info-list">
+                        <li>라이브 커머스 큐시트 기획</li>
+                        <li>영상 편집 (Premiere Pro)</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>SNS</h3>
+                    <ul class="info-list">
+                        <li>Instagram: @seongeun_sh</li>
+                        <li>YouTube: 성은의 라이브로그</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3>CONTACT</h3>
+                    <ul class="info-list">
+                        <li>E-mail: example@gmail.com</li>
+                        <li>Phone: 010-1234-5678</li>
                     </ul>
                 </div>
             </div>
@@ -138,7 +176,6 @@
     window.onload = function() {
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
-
         const profileNavLink = document.createElement('a');
         profileNavLink.href = `#profile`;
         profileNavLink.textContent = `PROFILE`;
@@ -147,7 +184,6 @@
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
                 const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
-                
                 if(cat.id !== "profile") {
                     const section = document.createElement('section'); section.id = cat.id;
                     let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
