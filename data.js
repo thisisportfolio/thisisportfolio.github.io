@@ -40,7 +40,11 @@ const videoData = [
    subDesc: " 전문적이고 공감하는 건강 이야기로 브랜딩과 매출을 위한 방송을  진행합니다.",
    summary: "연세생활건강, 뉴트리원, 농심 라이필, 농협 한삼인, 리큐젠유산균, 일동제약, 장인정신에브리데이, 뉴트루코리아 등의 브랜드와도 함께하고 있습니다.",
    items: [
-
+      { title: "CJ웰케어", link: "https://view.shoppinglive.naver.com/replays/1528998?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Health_01_cj.png", details: "네이버 카카오 GLIVE\n유산균, 콜라겐, 흑삼, 아르기닌, 팻다운\n(매출2억판매)" },
+      { title: "연세 생활건강 키즈텐", link: "https://shoppinglive.kakao.com/live/34431?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Health_02_kidsten.png", details: "네이버 카카오\n칼슘, 종합비타민, 유산균\n철분, 홍삼, 알로에" },
+      { title: "이경제 흑염소", link: "https://player.sauceflex.com/broadcast/lkebay-51b2846c187d442595c4b72fc73cfc80?", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Health_03_goat.png", details: "GLIVE\n흑염소 스틱, 진액 ,환" },
+      { title: "농심 라이필", link: "https://view.shoppinglive.naver.com/replays/1461421?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Health_04_nongshim.png", details: "네이버\n콜라겐, 락토페린, 오메가3 \n관절에쏀크릴 등" },
+      { title: "닥터블릿 푸응", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Health_05_drblet.png", details: "카카오\n푸응 팻버닝, 파비플로라, 잔티젠 등" }
      
    ]
   },
@@ -49,8 +53,17 @@ const videoData = [
     subDesc: "오감을 만족시키는 먹방으로 브랜딩과 매출을 위한 방송을  진행합니다",
     summary: "동서식품, 매일우유, 청정원, 우메종, 기미상회, 미미상회,  미쁨생활건강, 과일세트, 고기세트, 굴비, 정성곳간 등과 같은 브랜드와도 함께하고 있습니다.",
     items: [
-
-      
+      { title: "매일유업", link: "https://shoppinglive.kakao.com/live/48578?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_01_maeil.png", details: "카카오\n아몬드브리즈, 상하목장, 하루야채 등" },
+      { title: "청정원", link: "https://view.shoppinglive.naver.com/replays/1733973?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_02_cheongjungwon.png", details: "네이버\n추석선물세트(햄, 기름, 후추 등)" },
+      { title: "낫띵베럴", link: "https://shoppinglive.kakao.com/live/50717?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_03_nothingbetter.png", details: "카카오\n푸룬주스(푸푸른)" },
+      { title: "펄세스", link: "https://view.shoppinglive.naver.com/replays/1605275?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_04_pulses.png", details: "네이버\n저당커피" },
+      { title: "수백당", link: "https://view.shoppinglive.naver.com/replays/1625696?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_05_subaekdang.png", details: "네이버\n돼지국밥, 순대국밥, 전골" },
+      { title: "온브릭스(onbrix)", link: "https://shoppinglive.kakao.com/live/35826?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_06_onbrix.png", details: "카카오\n설날선물세트(과일)" },
+      { title: "이마트몰", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_07_emartmall.png", details: "네이버\n낚지볶음밥, 우유, 골뱅이 등" },
+      { title: "정성곳간", link: "https://view.shoppinglive.naver.com/replays/1508163?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_08_dogani.png", details: "네이버\n한우스지 도가니탕" },
+      { title: "바오담", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_09_baodam.png", details: "네이버\n도라지정과, 약과, 강정 등" },
+      { title: "프롬잇(FROMEAT)", link: "https://liveh5.coupang.com/plive/915829?pType=live&id=915829&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=915829&lptag=CFM96485063&itime=20251229130040&pageType=LIVE%2520COMMERCE&pageValue=915829&wTime=20251229130040&redirect=landing&mcid=5141d7fc70bc4872bcabb91d87742c24&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Food_10_fromeat.png", details: "쿠팡\n(발렌타인특집)저당초코, 스낵" }
+    
     ]
   },
   { id: "cat5",
