@@ -1,0 +1,36 @@
+const videoData = [
+  {
+    id: "cat1",
+    category: "BEAUTY",
+    subDesc: "뷰티개발자의 전문성을 녹입니다.",
+    summary: "JHP, 리시리, 퓨리스킨, 쥬베라, 효창비누, 피토메스, 원료공방, 더코리아콜라겐, NPR, 이든미네랄, 메디슈어, DPC, 스킨럽스파 등과 같은 브랜드와도 함께하고 있습니다.",
+    items: [
+      { title: "비플레인", link: "https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_01_beplain.png", details: "네이버\n라인, 앰플, 패드 스팟크림 등" },
+      { title: "파티온", link: "https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_02_fation.png", details: "네이버\n노스카나인 앰플, 크림, 패드 등" },
+      { title: "실크테라피", link: "https://view.shoppinglive.naver.com/replays/1640302?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_03_silktherapy.png", details: "네이버\n열강화 트리트먼트, 에센셜 오일 등" },
+      { title: "닥터바이오", link: "https://view.shoppinglive.naver.com/replays/1500801?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_04_drbio.png", details: "네이버 카카오\n로션, 샴푸, 트리트먼트 등" },
+      { title: "아로마티카", link: "https://view.shoppinglive.naver.com/replays/1611668?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_05_aromatica.png", details: "네이버\n샴푸, 트리트먼트, 두피토너 등" },
+      { title: "EOA", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_06_eoa.png", details: "카카오\n풀쎄라PRO, 풀써마, 앰플, 크림" },
+      { title: "케어놀로지", link: "https://view.shoppinglive.naver.com/replays/1767473?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_07_carenology.png", details: "네이버\n필링, 오일, 세럼, 앰플, 크림 등" },
+      { title: "아이레놀", link: "https://view.shoppinglive.naver.com/replays/1629227?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_08_ilenol.png", details: "네이버\n생얼크림, 다크서클크림" },
+      { title: "빈느", link: "https://www.youtube.com/watch?v=dtKyxKyVE0A", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_09_vinne.png", details: "쿠팡스페셜라이브\n쿠션, 립" },
+      { title: "크나이프", link: "https://shoppinglive.kakao.com/live/10126?input_channel_id=4119&input_channel_id=4337&ref=live_share&ref=talk_shoppingtab_live_direct&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Beauty_10_kneipp.png", details: "카카오\n페이스오일, 배쓰쏠트, 바디오일" }
+    ]
+  },
+  {
+    id: "cat2",
+    category: "TECH",
+    subDesc: "기능시연, 스토리텔링, TECH전문성으로 브랜딩과 매출을 위한 방송을 진행합니다.",
+    summary: "복잡한 IT 기기도 쉽고 재미있게! 테크 제품의 핵심 포인트를 짚어내는 라이브 모음입니다.",
+    items: [
+      { title: "휴롬(HUROM)", link: "https://m.hurom.co.kr/broadcast/live_view.php?contentId=97wm0vno", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_01_hurom.png", details: "공식몰\n착즙기" },
+      { title: "유라(JURA)", link: "https://view.shoppinglive.naver.com/replays/1254206?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Tech_02_jura.png", details: "네이버 더현대\n스위스 명품 커피머신" }
+    ]
+  },
+  { id: "cat3", category: "HEALTH", subDesc: "건강한 라이프스타일을 제안합니다.", summary: "건강기능식품 및 헬스케어 브랜드와 함께한 프로젝트입니다.", items: [] },
+  { id: "cat4", category: "FOOD", subDesc: "맛있는 경험을 생생하게 전달합니다.", summary: "신선식품, 가공식품 등 푸드 라이브 모음입니다.", items: [] },
+  { id: "cat5", category: "LIVING", subDesc: "삶의 질을 높이는 리빙 아이템", summary: "가전, 인테리어, 생활용품 카테고리입니다.", items: [] },
+  { id: "cat6", category: "FASHION", subDesc: "스타일과 트렌드를 제안합니다.", summary: "의류, 잡화, 패션 액세서리 방송입니다.", items: [] },
+  { id: "cat7", category: "TRAVEL", subDesc: "여행의 설렘을 공유합니다.", summary: "숙박, 항공, 투어 등 여행 상품 프로젝트입니다.", items: [] },
+  { id: "cat8", category: "LECTURE", subDesc: "지식과 정보를 나누는 시간", summary: "교육, 강연, 웨비나 진행 이력입니다.", items: [] }
+];
