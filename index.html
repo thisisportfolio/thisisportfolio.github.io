@@ -7,7 +7,6 @@
         body { font-family: 'Pretendard', sans-serif; background: #fff; color: #333; margin: 0; padding: 0; scroll-behavior: smooth; word-break: keep-all; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
         
-        /* 네비게이션 생략 (기존과 동일) */
         .nav-menu { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; }
 
@@ -28,47 +27,64 @@
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
 
-        .info-block { display: flex; gap: 15px; margin-bottom: 22px; align-items: flex-start; }
-        .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 8px; }
+        .info-block { display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start; }
+        .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 2px; }
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { margin-bottom: 4px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 12px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
+        .info-list li a { color: #555; text-decoration: none; }
+        .info-list li a:hover { color: #007bff; text-decoration: underline; }
 
-        /* --- [수정] 아이폰 앱 스타일 버튼 --- */
-        .app-grid { display: flex; gap: 15px; flex-wrap: wrap; }
+        /* --- [수정] 정교화된 아이폰 앱 스타일 버튼 --- */
+        .app-grid { display: flex; gap: 20px; padding-top: 5px; }
         .app-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; gap: 6px; }
         
         .app-icon {
-            width: 54px;
-            height: 54px;
-            border-radius: 12px; /* iOS Squircle 느낌 */
+            width: 52px;
+            height: 52px;
+            border-radius: 11px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
         }
-        .app-item:hover .app-icon { transform: scale(1.1); }
-        .app-label { font-size: 0.75rem; font-weight: 600; color: #666; }
+        .app-item:hover .app-icon { transform: translateY(-3px); }
+        .app-label { font-size: 0.7rem; font-weight: 500; color: #333; }
 
-        /* 앱별 컬러 (iOS 느낌) */
-        .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); } /* 메시지 그린 */
-        .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }    /* 메일 블루 */
-        .icon-insta { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); } /* 인스타 그라데이션 */
+        /* iOS Message Icon (SVG 구현) */
+        .icon-message { background: linear-gradient(180deg, #63E67B 0%, #36D151 100%); }
+        .icon-message::after { 
+            content: ''; width: 26px; height: 22px; 
+            background: white; border-radius: 11px;
+            position: relative;
+        }
+        .icon-message::before {
+            content: ''; position: absolute; bottom: 14px; left: 14px;
+            width: 0; height: 0;
+            border-right: 8px solid white; border-bottom: 8px solid transparent;
+            transform: rotate(10deg);
+        }
+
+        /* iOS Mail Icon (SVG 구현) */
+        .icon-mail { background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%); }
+        .icon-mail::after {
+            content: '✉'; color: white; font-size: 28px; line-height: 1;
+        }
 
         @media (max-width: 768px) { 
             header { flex-direction: column; text-align: center; gap: 20px; }
             .profile-wrapper { flex-direction: column; align-items: center; } 
             .profile-photo { width: 100%; max-width: 300px; } 
-            .info-block { flex-direction: column; gap: 10px; width: 100%; }
-            .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 5px; }
+            .info-block { flex-direction: column; gap: 8px; width: 100%; }
+            .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 3px; }
         }
 
-        /* 비디오 그리드 등 생략 (기존 유지) */
+        /* 비디오 그리드 스타일 유지 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 15px 0; }
-        .video-item { flex: 0 0 240px; background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 15px; text-align: center; }
+        .video-item { flex: 0 0 240px; background: #fff; border: 1px solid #eee; border-radius: 14px; padding: 15px; }
         footer { text-align: center; padding: 60px 0; color: #bbb; }
     </style>
 </head>
@@ -104,29 +120,33 @@
                     <ul class="info-list"><li>김성은(Sung Eun Kim)</li></ul>
                 </div>
                 <div class="info-block">
-                    <h3>INFO</h3>
-                    <ul class="info-list">
-                        <li>1991. 08. 27</li>
-                        <li>164cm / 48kg</li>
-                    </ul>
+                    <h3>BIRTH</h3>
+                    <ul class="info-list"><li>1991. 08. 27</li></ul>
                 </div>
-
+                <div class="info-block">
+                    <h3>PHYSICAL</h3>
+                    <ul class="info-list"><li>164cm / 48kg</li></ul>
+                </div>
+                
                 <div class="info-block">
                     <h3>CONTACT</h3>
                     <div class="app-grid">
                         <a href="sms:010-8853-0117" class="app-item">
-                            <div class="app-icon icon-message">💬</div>
-                            <span class="app-label">Message</span>
+                            <div class="app-icon icon-message"></div>
+                            <span class="app-label">메시지</span>
                         </a>
                         <a href="mailto:kse0117@kakao.com" class="app-item">
-                            <div class="app-icon icon-mail">✉️</div>
-                            <span class="app-label">Mail</span>
-                        </a>
-                        <a href="https://www.instagram.com/curator.sung" target="_blank" class="app-item">
-                            <div class="app-icon icon-insta">📸</div>
-                            <span class="app-label">Instagram</span>
+                            <div class="app-icon icon-mail"></div>
+                            <span class="app-label">메일</span>
                         </a>
                     </div>
+                </div>
+
+                <div class="info-block">
+                    <h3>INSTAGRAM</h3>
+                    <ul class="info-list">
+                        <li><a href="https://www.instagram.com/curator.sung" target="_blank">@curator.sung</a></li>
+                    </ul>
                 </div>
 
                 <div class="info-block">
@@ -152,6 +172,7 @@
 
 <script src="data.js"></script>
 <script>
+    // JS 생략 (기존과 동일)
     window.onload = function() {
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
