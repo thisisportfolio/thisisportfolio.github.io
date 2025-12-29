@@ -30,7 +30,15 @@
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: #007bff; }
 
-        /* 아이콘 중앙 정렬 절대 해결책 */
+        /* 인스타 링크 색상 보정 (방문 후에도 파란색 유지) */
+        .insta-link, .insta-link:visited { 
+            color: #007bff !important; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: 0.2s;
+        }
+        .insta-link:hover { text-decoration: underline; opacity: 0.8; }
+
         .app-grid { display: flex; gap: 15px; margin-top: 5px; align-items: center; }
         .app-item { text-decoration: none; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
         .app-item svg { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
@@ -81,10 +89,7 @@
                         <a href="sms:010-8853-0117" class="app-item">
                             <svg width="66.145836mm" height="66.145836mm" viewBox="0 0 66.145836 66.145836" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <defs>
-                                    <linearGradient id="g899">
-                                        <stop style="stop-color:#0cbd2a;stop-opacity:1" offset="0" />
-                                        <stop style="stop-color:#5bf675;stop-opacity:1" offset="1" />
-                                    </linearGradient>
+                                    <linearGradient id="g899"><stop style="stop-color:#0cbd2a;stop-opacity:1" offset="0" /><stop style="stop-color:#5bf675;stop-opacity:1" offset="1" /></linearGradient>
                                     <linearGradient xlink:href="#g899" id="g901" x1="-25.27" y1="207.52" x2="-25.27" y2="153" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.982,0,0,0.982,-1.065,3.796)" />
                                 </defs>
                                 <g transform="translate(59.483,-145.845)">
@@ -110,7 +115,7 @@
                     </div>
                 </div>
                 <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" class="insta-link">@curator.sung</a></li></ul></div>
-                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급</li><li>코스메틱머천다이징전문가 1급, 뷰티마케팅전문가 1급</li></ul></div>
+                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급, 코스메틱머천다이징전문가 1급, 뷰티마케팅전문가 1급</li></ul></div>
                 <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li><li>한국쇼호스트협회 공채반 수료</li></ul></div>
             </div>
         </div>
