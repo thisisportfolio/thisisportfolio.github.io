@@ -73,15 +73,15 @@ const videoData = [
     summary: "AMT, 로얄코펜하겐, 현대의료기, 콕시클, 깃든, 콕시클코리아, 캄포도마, 디베르, 버틀러, 에티카,  벨르아망 등과 같은 브랜드와도 함께하고 있습니다.",
     items: [
       { title: "시크릿데이", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_01_secretday.png", details: "11번가 PGM 우리집새로고침\n여성용품" },
-      { title: "포트메리온", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_02_portmeirion.png", details: "쿠팡스페셜라이브\n선물세트" },
-      { title: "유시몰", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_03_euthymol.png", details: "카카오\n치약" },
-      { title: "한샘 샘키즈", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_04_hansam.png", details: "네이버\n침대, 수납장 등" },
-      { title: "코코도르", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_05_cocodor.png", details: "쿠팡스페셜라이브\n\"성은이망극한쇼핑\" 크리스마스 디퓨저" },
-      { title: "피지 모락셀라 세제", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_06_fiji.png", details: "카카오\n모락셀라부스터 런칭, 섬유유연제" },
-      { title: "누잠", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_07_nuzam.png", details: "네이버\n토퍼매트리스, 침구류" },
-      { title: "AMT", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_08_amt.png", details: "더현대\n스테인레스 냄비, 웍" },
+      { title: "포트메리온", link: "https://liveh5.coupang.com/plive/890749?pType=live&id=890749&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=890749&lptag=CFM96485063&itime=20251229201402&pageType=LIVE%2520COMMERCE&pageValue=890749&wTime=20251229201402&redirect=landing&mcid=2b5f0fe5e62c4139b0803a9f09246935&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_02_portmeirion.png", details: "쿠팡스페셜라이브\n선물세트" },
+      { title: "유시몰", link: "https://shoppinglive.kakao.com/live/35245?startSec=300&storeHomeRef=store_live_after&tabId=c14a6ba28ff427f8c679d5", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_03_euthymol.png", details: "카카오\n치약" },
+      { title: "한샘 샘키즈", link: "https://view.shoppinglive.naver.com/lives/917371?dtm_medium=share&dtm_source=liveviewer&fm=shoppinglive&from=share&sn=share", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_04_hansam.png", details: "네이버\n침대, 수납장 등" },
+      { title: "코코도르", link: "https://liveh5.coupang.com/plive/841545?pType=live&id=841545&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=841545&lptag=CFM96485063&itime=20251229201407&pageType=LIVE%2520COMMERCE&pageValue=841545&wTime=20251229201407&redirect=landing&mcid=5b2b1b4a316f4cd0841ac72126d96b13&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_05_cocodor.png", details: "쿠팡스페셜라이브\n\"성은이망극한쇼핑\" 크리스마스 디퓨저" },
+      { title: "피지 모락셀라 세제", link: "https://shoppinglive.kakao.com/live/41311?input_channel_id=4119&ref=live_share&t_src=shopping_live&t_ch=share&t_obj=URLshare", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_06_fiji.png", details: "카카오\n모락셀라부스터 런칭, 섬유유연제" },
+      { title: "누잠", link: "https://view.shoppinglive.naver.com/replays/1614543?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_07_nuzam.png", details: "네이버\n토퍼매트리스, 침구류" },
+      { title: "AMT", link: "https://www.thehyundai.com/front/bda/BDALiveBrodPtc.thd?pLiveBfmtNo=202408190002&ReferCode=L00", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_08_amt.png", details: "더현대\n스테인레스 냄비, 웍" },
       { title: "쿠첸", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_09_cuchen.png", details: "네이버\n압력밥솥" },
-      { title: "보국전자", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_10_bokuk.png", details: "쿠팡스페셜라이브\n써큘레이터, 선풍기" }
+      { title: "보국전자", link: "https://liveh5.coupang.com/plive/740793?pType=live&id=740793&source=sharedLink&src=1191000&spec=10999999&addtag=812&ctag=740793&lptag=CFM96485063&itime=20251229201416&pageType=LIVE%2520COMMERCE&pageValue=740793&wTime=20251229201416&redirect=landing&mcid=7c3d76115c9040dc87eefd9e7e69ff96&isshortened=Y&settlement=N", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_10_bokuk.png", details: "쿠팡스페셜라이브\n써큘레이터, 선풍기" }
     ]
   },
   {
@@ -90,7 +90,12 @@ const videoData = [
     subDesc: "트랜디하며 편안한 방송을 하겠습니다. OOTD에 맞는 코디로 브랜딩과 매출을 위한 방송을 진행합니다.",
     summary: "THURSDAY ISLAND(써스데이아일랜드), CC COLLECT(씨씨콜렉트), 올리브데올리브, DEWL(듀엘), 벤셔먼 등의 브랜드와도 함께하고 있습니다.",
     items: [
-      { title: "", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Living_01_.png", details: "\n" }
+      { title: "비트윈에이앤비", link: "https://www.youtube.com/watch?v=snROHqjhLCY", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_01_between.png", details: "신성통상 굿웨어몰\n" },
+      { title: "파슨스", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_02_parsons.png", details: "현대홈쇼핑 현대몰\n" },
+      { title: "주크(ZOOC)", link: "https://view.shoppinglive.naver.com/replays/1429110?tr=blim&fm=shoppinglive&sn=bridge", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_03_zooc_01.png", details: "네이버\n" },
+      { title: "도호(DOHO)", link: "", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_04_doho.png", details: "현대홈쇼핑 현대몰\n" },
+      { title: "보네뜨", link: "https://view.shoppinglive.naver.com/replays/1195078?dtm_medium=share&dtm_source=liveviewer&fm=shoppinglive&from=share&sn=share&tr=lim", img: "https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Fashion_05_bonnette.png", details: "네이버\n" }
+
     ]
   },
   {
