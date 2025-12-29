@@ -10,21 +10,22 @@
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; transition: 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px 0; border-bottom: 1px solid #eee; }
+        header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 40px 0; border-bottom: 1px solid #eee; }
         .header-profile-img { flex: 0 0 160px; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
         .header-text-content h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
         .header-text-content p { margin: 8px 0; color: #555; }
 
-        section { padding: 40px 0; border-bottom: 1px solid #f5f5f5; }
-        .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 25px; border-left: 4px solid #007bff; padding-left: 15px; }
-        .section-title-wrap h2 { margin: 0; font-size: 1.5rem; }
+        /* 섹션(카테고리) 간격 줄임 */
+        section { padding: 25px 0; border-bottom: 1px solid #f5f5f5; }
+        .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
+        .section-title-wrap h2 { margin: 0; font-size: 1.4rem; }
 
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; }
         .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
-        .info-block { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
+        .info-block { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
         .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 2px; line-height: 1.4; letter-spacing: 0.5px; }
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { margin-bottom: 6px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 14px; color: #555; }
@@ -33,32 +34,34 @@
         .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
         .insta-link:hover { text-decoration: underline; }
 
-        .app-grid { display: flex; gap: 15px; margin-top: 2px; }
-        .app-item { text-decoration: none; }
-        .app-img-icon { width: 48px; height: 48px; border-radius: 11px; object-fit: cover; transition: 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .app-grid { display: flex; gap: 12px; margin-top: 2px; }
+        .app-img-icon { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; transition: 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         .app-item:hover { transform: translateY(-3px); }
 
-        /* --- 영상 크기 최적화 (너비 180px로 축소) --- */
-        .video-grid { display: flex; overflow-x: auto; gap: 12px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
-        .video-item { flex: 0 0 180px; background: #fff; padding: 10px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
-        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 6px; margin-bottom: 8px; }
+        /* 영상 그리드 및 서머리 간격 최적화 */
+        .video-grid { display: flex; overflow-x: auto; gap: 12px; padding: 5px 5px 10px 5px; scroll-snap-type: x mandatory; }
+        .video-item { flex: 0 0 160px; background: #fff; padding: 8px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 6px; margin-bottom: 6px; }
         .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; transition: 0.3s; }
         .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
-        .play-overlay span { color: white; font-size: 1.8rem; }
+        .play-overlay span { color: white; font-size: 1.5rem; }
         .thumb-link:hover .play-overlay { opacity: 1; }
-        .video-item p { margin: 0; font-weight: 700; font-size: 0.85rem; color: #222; line-height: 1.3; }
-        .video-details { margin-top: 5px; font-size: 0.75rem; color: #777; line-height: 1.4; white-space: pre-line; }
-        .category-summary { background: #f8f9fa; padding: 15px 20px; border-radius: 10px; font-size: 0.95rem; color: #555; margin-top: 15px; border-left: 1px solid #eee; }
+        .video-item p { margin: 0; font-weight: 700; font-size: 0.82rem; color: #222; line-height: 1.2; }
+        .video-details { margin-top: 4px; font-size: 0.72rem; color: #888; line-height: 1.3; white-space: pre-line; }
+
+        /* 서머리 여백 축소 */
+        .category-summary { background: #f8f9fa; padding: 12px 18px; border-radius: 8px; font-size: 0.9rem; color: #666; margin-top: 10px; border-left: 1px solid #eee; }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; gap: 20px; }
+            header { flex-direction: column; text-align: center; gap: 15px; padding: 30px 0; }
             .profile-wrapper { flex-direction: column; align-items: center; }
-            .profile-photo { width: 100%; max-width: 300px; margin-bottom: 20px; }
+            .profile-photo { width: 100%; max-width: 280px; margin-bottom: 15px; }
             .info-block { flex-direction: column; gap: 5px; width: 100%; }
-            .info-block h3 { flex: none; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-            .video-item { flex: 0 0 65%; }
+            .info-block h3 { flex: none; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 3px; }
+            /* 모바일에서 영상 크기 적정화 */
+            .video-item { flex: 0 0 145px; }
         }
-        footer { text-align: center; padding: 60px 0; color: #bbb; font-size: 0.9rem; }
+        footer { text-align: center; padding: 40px 0; color: #bbb; font-size: 0.85rem; border-top: 1px solid #f5f5f5; }
     </style>
 </head>
 <body>
@@ -103,7 +106,7 @@
             videoData.forEach(cat => {
                 const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
                 const section = document.createElement('section'); section.id = cat.id;
-                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
+                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 30px 0;">준비 중입니다.</p>`;
                 section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
                 contents.appendChild(section);
             });
