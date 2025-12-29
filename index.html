@@ -34,14 +34,11 @@
         .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
         .insta-link:hover { text-decoration: underline; }
 
+        /* --- SVG 아이콘 스타일 --- */
         .app-grid { display: flex; gap: 15px; margin-top: 2px; }
         .app-item { text-decoration: none; }
-        .app-img-icon { 
-            width: 48px; height: 48px; border-radius: 11px; 
-            object-fit: contain; transition: 0.2s; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-        }
-        .app-item:hover .app-img-icon { transform: translateY(-3px); }
+        .icon-svg-box { width: 48px; height: 48px; border-radius: 11px; overflow: hidden; transition: 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block; }
+        .app-item:hover .icon-svg-box { transform: translateY(-3px); }
 
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
@@ -83,10 +80,14 @@
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
                         <a href="sms:010-8853-0117" class="app-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IMessage_logo.svg/512px-IMessage_logo.svg.png" class="app-img-icon" alt="메시지">
+                            <span class="icon-svg-box">
+                                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="#62E67A"/><path d="M30 15C20.6 15 13 21.2 13 28.8C13 33.2 15.6 37.2 19.8 39.8L18.5 45L24.2 42.1C26 42.5 28 42.7 30 42.7C39.4 42.7 47 36.5 47 28.9C47 21.3 39.4 15 30 15Z" fill="white"/></svg>
+                            </span>
                         </a>
                         <a href="mailto:kse0117@kakao.com" class="app-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Apple_Mail_logo.svg/512px-Apple_Mail_logo.svg.png" class="app-img-icon" alt="메일">
+                            <span class="icon-svg-box">
+                                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="#59C7F9"/><path d="M15 20H45V40H15V20ZM17 22V38H43V22H17ZM19 24L30 31L41 24H19Z" fill="white"/></svg>
+                            </span>
                         </a>
                     </div>
                 </div>
