@@ -34,14 +34,18 @@
 <footer><p>Copyright 2025. [이름] All rights reserved.</p></footer>
 <script src="data.js"></script>
 <script>
-    const navMenu = document.getElementById('dynamic-nav'); const contents = document.getElementById('portfolio-contents');
-    videoData.forEach(cat => {
-        const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
-        const section = document.createElement('section'); section.id = cat.id;
-        let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
-        section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2><span class="sub-desc">"${cat.subDesc}"</span></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
-        contents.appendChild(section);
-    });
+    window.onload = function() {
+        const navMenu = document.getElementById('dynamic-nav'); const contents = document.getElementById('portfolio-contents');
+        if (typeof videoData !== 'undefined') {
+            videoData.forEach(cat => {
+                const navLink = document.createElement('a'); navLink.href = `#${cat.id}`; navLink.textContent = cat.category; navMenu.appendChild(navLink);
+                const section = document.createElement('section'); section.id = cat.id;
+                let itemsHtml = (cat.items && cat.items.length > 0) ? `<div class="video-grid">${cat.items.map(item => `<div class="video-item"><a href="${item.link}" target="_blank" class="thumb-link"><img src="${item.img}"><div class="play-overlay"><span>▶</span></div></a><p>${item.title}</p><div class="video-details">${item.details}</div></div>`).join('')}</div>` : `<p style="color:#ccc; text-align:center; padding: 40px 0;">준비 중입니다.</p>`;
+                section.innerHTML = `<div class="section-title-wrap"><h2>${cat.category}</h2><span class="sub-desc">"${cat.subDesc}"</span></div>${itemsHtml}<div class="category-summary">${cat.summary}</div>`;
+                contents.appendChild(section);
+            });
+        }
+    };
 </script>
 </body>
 </html>
