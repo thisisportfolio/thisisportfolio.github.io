@@ -34,20 +34,19 @@
         .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
         .insta-link:hover { text-decoration: underline; }
 
-        /* --- 수정한 아이콘 스타일 --- */
+        /* --- 안정적인 아이콘 이미지 적용 --- */
         .app-grid { display: flex; gap: 15px; margin-top: 2px; }
         .app-item { text-decoration: none; }
         .app-img-icon { 
             width: 48px; 
             height: 48px; 
             border-radius: 11px; 
-            object-fit: cover; 
+            object-fit: contain; 
             transition: 0.2s; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
         }
         .app-item:hover .app-img-icon { transform: translateY(-3px); }
 
-        /* 비디오 섹션 스타일 유지 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -82,16 +81,16 @@
         <div class="profile-wrapper">
             <div class="profile-photo"><img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_02.png"></div>
             <div class="profile-info">
-                <div class="info-block"><h3>NAME</h3><ul class="info-list"><li>김성은(Sung Eun Kim)</li></ul></div>
+                <div class="info-block"><h3>NAME</h3><ul class="info-list"><li>김성은 (Sung Eun Kim)</li></ul></div>
                 <div class="info-block"><h3>BIRTH</h3><ul class="info-list"><li>1991. 08. 27</li></ul></div>
                 <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
                         <a href="sms:010-8853-0117" class="app-item">
-                            <img src="https://googleusercontent.com/image_generation_content/0" class="app-img-icon" alt="메시지">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IMessage_logo.svg/1200px-IMessage_logo.svg.png" class="app-img-icon" alt="메시지">
                         </a>
                         <a href="mailto:kse0117@kakao.com" class="app-item">
-                            <img src="https://googleusercontent.com/image_generation_content/0" class="app-img-icon" alt="메일" style="object-position: center;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/1101px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" class="app-img-icon" alt="메일">
                         </a>
                     </div>
                 </div>
