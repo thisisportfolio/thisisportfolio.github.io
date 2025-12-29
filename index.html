@@ -11,7 +11,6 @@
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; flex-shrink: 0; transition: all 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        /* --- 헤더 --- */
         header { display: flex; align-items: center; justify-content: center; gap: 50px; padding: 50px 0; border-bottom: 1px solid #eee; text-align: left; }
         .header-profile-img { flex: 0 0 160px; width: 160px; height: 160px; flex-shrink: 0; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; background: #fff; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -20,48 +19,52 @@
         .header-text-content p { margin: 8px 0 12px 0; font-size: 1rem; color: #555; }
         .header-hashtags { display: flex; gap: 10px; flex-wrap: wrap; }
         .header-hashtags span { color: #007bff; font-size: 0.85rem; font-weight: 600; }
-        @media (max-width: 600px) { header { flex-direction: column; text-align: center; gap: 20px; padding: 40px 0; } .header-hashtags { justify-content: center; } .header-profile-img { flex: 0 0 140px; width: 140px; height: 140px; } }
 
-        /* --- 섹션 여백 --- */
         section { padding: 35px 0 25px 0; border-bottom: 1px solid #f5f5f5; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.5rem; }
         
-        /* --- PROFILE 상세 스타일 --- */
         .profile-wrapper { display: flex; gap: 40px; align-items: flex-start; margin-top: 15px; }
         .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
 
         .info-block { display: flex; gap: 15px; margin-bottom: 18px; align-items: flex-start; }
-        .info-block h3 { 
-            flex: 0 0 110px; 
-            font-size: 0.95rem; 
-            color: #333; 
-            font-weight: 700; 
-            margin: 0; 
-            padding-top: 1px;
-            letter-spacing: 0.5px;
-        }
+        .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 1px; letter-spacing: 0.5px; }
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
-        .info-list li { 
-            margin-bottom: 4px; 
-            font-size: 0.92rem; 
-            line-height: 1.4; 
-            position: relative; 
-            padding-left: 12px; 
-            color: #555;
-        }
+        .info-list li { margin-bottom: 4px; font-size: 0.92rem; line-height: 1.4; position: relative; padding-left: 12px; color: #555; }
         .info-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
+        
+        /* --- [추정] 버튼 스타일 정의 --- */
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-top: 5px;
+        }
+        .btn-contact:hover {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
 
         @media (max-width: 768px) { 
+            header { flex-direction: column; text-align: center; gap: 20px; padding: 40px 0; }
+            .header-hashtags { justify-content: center; }
             .profile-wrapper { flex-direction: column; align-items: center; } 
             .profile-photo { flex: 0 0 auto; width: 100%; max-width: 300px; margin-bottom: 30px; } 
-            .info-block { gap: 5px; margin-bottom: 20px; }
+            .info-block { gap: 5px; margin-bottom: 20px; width: 100%; }
             .info-block h3 { flex: none; border-bottom: 1px solid #eee; width: 100%; padding-bottom: 3px; margin-bottom: 5px; }
         }
 
-        /* 공통 비디오 그리드 스타일 */
         .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
         .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; display: flex; flex-direction: column; align-items: center; }
         .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
@@ -117,16 +120,12 @@
                     <ul class="info-list"><li>164cm / 48kg</li></ul>
                 </div>
                 <div class="info-block">
-                    <h3>PHONE</h3>
-                    <ul class="info-list"><li>010-8853-0117</li></ul>
-                </div>
-                <div class="info-block">
-                    <h3>INSTAGRAM</h3>
-                    <ul class="info-list"><li>@curator.sung</li></ul>
-                </div>
-                <div class="info-block">
-                    <h3>E-MAIL</h3>
-                    <ul class="info-list"><li>kse0117@kakao.com</li></ul>
+                    <h3>CONTACT</h3>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <a href="tel:010-8853-0117" class="btn-contact">📞 Call</a>
+                        <a href="mailto:kse0117@kakao.com" class="btn-contact">✉️ Email</a>
+                        <a href="https://www.instagram.com/curator.sung" target="_blank" class="btn-contact">📸 Instagram</a>
+                    </div>
                 </div>
                 <div class="info-block">
                     <h3>LICENSE</h3>
