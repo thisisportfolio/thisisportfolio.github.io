@@ -24,7 +24,6 @@
         .profile-photo { flex: 0 0 320px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
         .profile-info { flex: 1; }
-
         .info-block { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
         .info-block h3 { flex: 0 0 110px; font-size: 0.95rem; color: #333; font-weight: 700; margin: 0; padding-top: 2px; line-height: 1.4; letter-spacing: 0.5px; }
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
@@ -34,21 +33,21 @@
         .insta-link { color: #007bff !important; text-decoration: none; font-weight: 600; }
         .insta-link:hover { text-decoration: underline; }
 
-        /* --- SVG 아이콘 스타일 --- */
         .app-grid { display: flex; gap: 15px; margin-top: 2px; }
         .app-item { text-decoration: none; }
-        .icon-svg-box { width: 48px; height: 48px; border-radius: 11px; overflow: hidden; transition: 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: block; }
-        .app-item:hover .icon-svg-box { transform: translateY(-3px); }
+        .app-img-icon { width: 48px; height: 48px; border-radius: 11px; object-fit: cover; transition: 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .app-item:hover { transform: translateY(-3px); }
 
-        .video-grid { display: flex; overflow-x: auto; gap: 20px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
-        .video-item { flex: 0 0 240px; background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
-        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
+        /* --- 영상 크기 최적화 (너비 180px로 축소) --- */
+        .video-grid { display: flex; overflow-x: auto; gap: 12px; padding: 5px 5px 15px 5px; scroll-snap-type: x mandatory; }
+        .video-item { flex: 0 0 180px; background: #fff; padding: 10px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 6px; margin-bottom: 8px; }
         .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; transition: 0.3s; }
         .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
-        .play-overlay span { color: white; font-size: 2.5rem; }
+        .play-overlay span { color: white; font-size: 1.8rem; }
         .thumb-link:hover .play-overlay { opacity: 1; }
-        .video-item p { margin: 0; font-weight: 700; font-size: 0.95rem; color: #222; }
-        .video-details { margin-top: 8px; font-size: 0.82rem; color: #777; line-height: 1.5; white-space: pre-line; }
+        .video-item p { margin: 0; font-weight: 700; font-size: 0.85rem; color: #222; line-height: 1.3; }
+        .video-details { margin-top: 5px; font-size: 0.75rem; color: #777; line-height: 1.4; white-space: pre-line; }
         .category-summary { background: #f8f9fa; padding: 15px 20px; border-radius: 10px; font-size: 0.95rem; color: #555; margin-top: 15px; border-left: 1px solid #eee; }
 
         @media (max-width: 768px) {
@@ -57,7 +56,7 @@
             .profile-photo { width: 100%; max-width: 300px; margin-bottom: 20px; }
             .info-block { flex-direction: column; gap: 5px; width: 100%; }
             .info-block h3 { flex: none; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-            .video-item { flex: 0 0 75%; }
+            .video-item { flex: 0 0 65%; }
         }
         footer { text-align: center; padding: 60px 0; color: #bbb; font-size: 0.9rem; }
     </style>
@@ -67,7 +66,10 @@
 <div class="container" id="portfolio-contents">
     <header>
         <div class="header-profile-img"><img src="https://raw.githubusercontent.com/thisisportfolio/thisisportfolio.github.io/main/images/Profile_01.png" alt="김성은"></div>
-        <div class="header-text-content"><h1>김성은</h1><p>영상으로 가치를 전달하는 쇼호스트입니다.</p></div>
+        <div class="header-text-content">
+            <h1>김성은</h1>
+            <p>영상으로 가치를 전달하는 쇼호스트입니다.</p>
+        </div>
     </header>
     <section id="profile">
         <div class="section-title-wrap"><h2>PROFILE</h2></div>
@@ -79,16 +81,8 @@
                 <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
                 <div class="info-block"><h3>CONTACT</h3>
                     <div class="app-grid">
-                        <a href="sms:010-8853-0117" class="app-item">
-                            <span class="icon-svg-box">
-                                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="#62E67A"/><path d="M30 15C20.6 15 13 21.2 13 28.8C13 33.2 15.6 37.2 19.8 39.8L18.5 45L24.2 42.1C26 42.5 28 42.7 30 42.7C39.4 42.7 47 36.5 47 28.9C47 21.3 39.4 15 30 15Z" fill="white"/></svg>
-                            </span>
-                        </a>
-                        <a href="mailto:kse0117@kakao.com" class="app-item">
-                            <span class="icon-svg-box">
-                                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" rx="13" fill="#59C7F9"/><path d="M15 20H45V40H15V20ZM17 22V38H43V22H17ZM19 24L30 31L41 24H19Z" fill="white"/></svg>
-                            </span>
-                        </a>
+                        <a href="sms:010-8853-0117" class="app-item"><img src="메시지이미지경로.png" class="app-img-icon" alt="메시지"></a>
+                        <a href="mailto:kse0117@kakao.com" class="app-item"><img src="메일이미지경로.png" class="app-img-icon" alt="메일"></a>
                     </div>
                 </div>
                 <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" class="insta-link">@curator.sung</a></li></ul></div>
