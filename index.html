@@ -99,4 +99,58 @@
                     <div style="display:flex; gap:10px; margin-top:5px;">
                         </div>
                 </div>
-                <div class="info-block"><h3>INSTAGRAM</h3>
+                <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" style="color:#007bff; text-decoration:none; font-weight:600;">@curator.sung</a></li></ul></div>
+                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급 등</li></ul></div>
+                <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li></ul></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>Copyright 2025. 김성은 All rights reserved.</p>
+</footer>
+
+<script src="data.js"></script>
+<script>
+    window.onload = function() {
+        const navMenu = document.getElementById('dynamic-nav'); 
+        const contents = document.getElementById('portfolio-contents');
+        
+        // PROFILE 메뉴 추가
+        const pLink = document.createElement('a'); 
+        pLink.href = "#profile"; pLink.textContent = "PROFILE"; 
+        navMenu.appendChild(pLink);
+        
+        if (typeof videoData !== 'undefined') {
+            videoData.forEach(cat => {
+                const navLink = document.createElement('a'); 
+                navLink.href = `#${cat.id}`; navLink.textContent = cat.category; 
+                navMenu.appendChild(navLink);
+
+                const section = document.createElement('section'); 
+                section.id = cat.id;
+                
+                let itemsHtml = (cat.items && cat.items.length > 0) ? 
+                    `<div class="video-grid">${cat.items.map(item => `
+                        <div class="video-item">
+                            <a href="${item.link || 'javascript:void(0);'}" ${item.link ? 'target="_blank"' : ''} class="thumb-link">
+                                 <img src="${item.img}">
+                                 <div class="play-overlay"><span>▶</span></div>
+                            </a>
+                            <p>${item.title}</p>
+                            <div class="video-details">${item.details}</div>
+                        </div>`).join('')}</div>` 
+                    : `<p style="color:#ccc; text-align:center; padding: 30px 0;">콘텐츠 준비 중입니다.</p>`;
+                
+                section.innerHTML = `
+                    <div class="section-title-wrap"><h2>${cat.category}</h2><span>${cat.subDesc || ""}</span></div>
+                    ${itemsHtml}
+                    <div class="category-summary">${cat.summary}</div>`;
+                contents.appendChild(section);
+            });
+        }
+    };
+</script>
+</body>
+</html>
