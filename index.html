@@ -14,15 +14,19 @@
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; transition: 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        /* 헤더 프로필 (180px, contain) */
+        /* 헤더 프로필 */
         header { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 40px 0; border-bottom: 1px solid #eee; }
         .header-profile-img { flex: 0 0 180px; width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; background: #fff; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
         .header-text-content h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
         .header-text-content p { margin: 8px 0; color: #555; }
 
-        /* 섹션 공통 */
-        section { padding: 25px 0; border-bottom: 1px solid #f5f5f5; }
+        /* 섹션 공통 - 스크롤 위치 보정 추가 */
+        section { 
+            padding: 25px 0; 
+            border-bottom: 1px solid #f5f5f5; 
+            scroll-margin-top: 70px; /* 메뉴바에 가려지지 않게 상단 여백 설정 */
+        }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.4rem; }
         .section-title-wrap span { font-size: 0.85rem; color: #888; font-weight: 400; }
@@ -139,13 +143,11 @@
         // data.js 기반 동적 섹션 생성
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
-                // 네비게이션 추가
                 const navLink = document.createElement('a'); 
                 navLink.href = `#${cat.id}`; 
                 navLink.textContent = cat.category; 
                 navMenu.appendChild(navLink);
 
-                // 섹션 생성
                 const section = document.createElement('section'); 
                 section.id = cat.id;
                 
