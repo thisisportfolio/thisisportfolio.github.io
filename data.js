@@ -3,7 +3,7 @@ const videoData = [
     id: "cat1",
     category: "BEAUTY",
     subDesc: "뷰티개발자의 전문성을 녹입니다.",
-    summary: "JHP, 리시리, 퓨리스킨, 쥬베라, 효창비누, 피토메스, 원료공방, 더코리아콜라겐, NPR, 이든미네랄, 메디슈어, DPC, 스킨럽스파 등과 같은 브랜드와도 함께하고 있습니다.",
+    summary: "동국제약, 비플레인, EOA, 닥터바이오, 케어놀로지, 파티온, 아떼 등과 같은 브랜드와도 함께하고 있습니다.",
     items: [
       { title: "비플레인", link: "https://view.shoppinglive.naver.com/replays/1746282?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/koreanlivehost/koreanlivehost.github.io/main/images/Beauty_01_beplain.png", details: "네이버\n라인, 앰플, 패드 스팟크림 등" },
       { title: "파티온", link: "https://view.shoppinglive.naver.com/replays/1688410?fm=shoppinglive&sn=home", img: "https://raw.githubusercontent.com/koreanlivehost/koreanlivehost.github.io/main/images/Beauty_02_fation.png", details: "네이버\n노스카나인 앰플, 크림, 패드 등" },
