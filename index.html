@@ -6,51 +6,29 @@
     <title>포트폴리오 | 쇼호스트 김성은</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
+        /* 기본 레이아웃 및 폰트 */
         body { font-family: 'Pretendard', sans-serif; background: #fff; color: #333; margin: 0; padding: 0; scroll-behavior: smooth; word-break: keep-all; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
         
-        /* 네비게이션 */
+        /* 네비게이션: 상단 고정 */
         .nav-menu { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; padding: 10px 0; display: flex; justify-content: center; overflow-x: auto; white-space: nowrap; }
         .nav-menu a { padding: 8px 15px; font-size: 0.85rem; font-weight: 600; color: #666; text-decoration: none; transition: 0.2s; }
         .nav-menu a:hover { color: #007bff; background: #f0f7ff; border-radius: 20px; }
 
-        /* 헤더 프로필 */
+        /* 헤더 프로필 영역 */
         header { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 40px 0; border-bottom: 1px solid #eee; }
         .header-profile-img { flex: 0 0 180px; width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 2px solid #eee; padding: 4px; background: #fff; }
         .header-profile-img img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
         .header-text-content h1 { margin: 0; font-size: 1.8rem; font-weight: 800; }
         .header-text-content p { margin: 8px 0; color: #555; }
 
-        /* 섹션 공통 */
+        /* 섹션 타이틀 공통 */
         section { padding: 25px 0; border-bottom: 1px solid #f5f5f5; scroll-margin-top: 70px; }
         .section-title-wrap { display: flex; align-items: baseline; gap: 12px; margin-bottom: 15px; border-left: 4px solid #007bff; padding-left: 15px; }
         .section-title-wrap h2 { margin: 0; font-size: 1.4rem; }
         .section-title-wrap span { font-size: 0.85rem; color: #888; font-weight: 400; }
 
-        /* 비디오 그리드 및 스크롤바 설정 */
-        .video-grid { display: flex; overflow-x: auto; gap: 12px; padding: 10px 5px 20px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-        
-        /* 스크롤바 디자인 (모바일에서도 보이게) */
-        .video-grid::-webkit-scrollbar { height: 4px; display: block; }
-        .video-grid::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 10px; }
-        .video-grid::-webkit-scrollbar-thumb { background: #007bff; border-radius: 10px; }
-
-        .video-item { flex: 0 0 160px; background: #fff; padding: 8px; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); scroll-snap-align: center; text-align: center; }
-        
-        /* 썸네일 호버 시 확대 효과 */
-        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 6px; margin-bottom: 6px; }
-        .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; transition: 0.4s ease; }
-        .thumb-link:hover img { transform: scale(1.1); }
-        
-        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
-        .play-overlay span { color: white; font-size: 1.5rem; }
-        .thumb-link:hover .play-overlay { opacity: 1; background: rgba(0,0,0,0.4); }
-
-        .video-item p { margin: 0; font-weight: 700; font-size: 0.82rem; color: #222; line-height: 1.2; }
-        .video-details { margin-top: 4px; font-size: 0.72rem; color: #888; line-height: 1.3; white-space: pre-line; }
-        .category-summary { background: #f8f9fa; padding: 12px 18px; border-radius: 8px; font-size: 0.9rem; color: #666; margin-top: 10px; border-left: 1px solid #eee; }
-
-        /* 프로필 섹션 생략 (기존과 동일) */
+        /* 프로필 상세 정보 영역 */
         .profile-wrapper { display: flex; gap: 30px; align-items: flex-start; background: #fafafa; padding: 20px; border-radius: 15px; }
         .profile-photo { flex: 0 0 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .profile-photo img { width: 100%; display: block; aspect-ratio: 3/4; object-fit: cover; }
@@ -60,12 +38,61 @@
         .info-list { flex: 1; list-style: none; padding: 0; margin: 0; }
         .info-list li { margin-bottom: 4px; font-size: 0.9rem; line-height: 1.4; color: #444; }
 
+        /* 연락처 아이콘 */
+        .app-grid { display: flex; gap: 12px; margin-top: 5px; align-items: center; }
+        .app-item { text-decoration: none; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .app-item svg { width: 100%; height: 100%; object-fit: contain; }
+        .app-item:hover { transform: translateY(-3px); }
+
+        /* 비디오 가로 그리드 (스크롤바 원래대로 유지) */
+        .video-grid { display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px 25px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        
+        /* 비디오 아이템 박스 전체 호버 효과 */
+        .video-item { 
+            flex: 0 0 160px; 
+            background: #fff; 
+            padding: 10px; 
+            border: 1px solid #eee; 
+            border-radius: 15px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            scroll-snap-align: center; 
+            text-align: center;
+            transition: all 0.3s ease; 
+            text-decoration: none; /* 링크 강조 제거 */
+            display: block; 
+            cursor: pointer;
+        }
+
+        /* 마우스 올렸을 때 박스 전체가 떠오르는 효과 */
+        .video-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            border-color: #007bff;
+        }
+
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 8px; }
+        .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+
+        /* 재생 오버레이 효과 */
+        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+        .video-item:hover .play-overlay { opacity: 1; }
+        .play-overlay span { color: white; font-size: 1.5rem; }
+
+        .video-item p { margin: 8px 0 0; font-weight: 700; font-size: 0.85rem; color: #222; line-height: 1.2; }
+        .video-details { margin-top: 5px; font-size: 0.72rem; color: #888; line-height: 1.4; white-space: pre-line; }
+        .category-summary { background: #f8f9fa; padding: 12px 18px; border-radius: 10px; font-size: 0.9rem; color: #666; margin-top: 15px; border-left: 4px solid #eee; }
+
+        /* 푸터 */
+        footer { text-align: center; padding: 50px 0; color: #bbb; font-size: 0.85rem; border-top: 1px solid #f5f5f5; }
+
+        /* 모바일 최적화 */
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; gap: 15px; padding: 30px 0; }
+            header { flex-direction: column; text-align: center; gap: 20px; padding: 30px 0; }
             .profile-wrapper { flex-direction: column; align-items: center; gap: 20px; }
             .profile-photo { width: 180px; }
-            /* 모바일에서 옆으로 살짝 잘려 보이게 설정 */
-            .video-item { flex: 0 0 155px; } 
+            .info-block { flex-direction: column; gap: 5px; }
+            .info-block h3 { border-bottom: 1px solid #eee; width: 100%; margin-bottom: 5px; }
+            .video-item { flex: 0 0 155px; } /* 다음 박스 살짝 노출 */
         }
     </style>
 </head>
@@ -96,12 +123,18 @@
                 <div class="info-block"><h3>PHYSICAL</h3><ul class="info-list"><li>164cm / 48kg</li></ul></div>
                 <div class="info-block">
                     <h3>CONTACT</h3>
-                    <div style="display:flex; gap:10px; margin-top:5px;">
-                        </div>
+                    <div class="app-grid">
+                        <a href="sms:010-8853-0117" class="app-item">
+                            <svg width="66" height="66" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g899"><stop style="stop-color:#0cbd2a" offset="0"/><stop style="stop-color:#5bf675" offset="1"/></linearGradient><linearGradient xlink:href="#g899" id="g901" x1="-25.27" y1="207.52" x2="-25.27" y2="153" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.982,0,0,0.982,-1.065,3.796)"/></defs><g transform="translate(59.483,-145.845)"><rect ry="14.56" rx="14.56" y="145.845" x="-59.483" height="66.145" width="66.145" fill="url(#g901)"/><path d="m -26.41,157.296 a 24.27,20.22 0 0 0 -24.27,20.22 24.27,20.22 0 0 0 11.79,17.31 27.36,20.22 0 0 1 -4.24,5.94 23.85,20.22 0 0 0 9.86,-3.87 24.27,20.22 0 0 0 6.86,0.83 24.27,20.22 0 0 0 24.27,-20.22 24.27,20.22 0 0 0 -24.27,-20.22 z" fill="#ffffff"/></g></svg>
+                        </a>
+                        <a href="mailto:kse0117@kakao.com" class="app-item">
+                            <svg width="602" height="602" viewBox="0 0 602 602" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g3068"><stop style="stop-color:#70efff" offset="0"/><stop style="stop-color:#5770ff" offset="1"/></linearGradient><linearGradient xlink:href="#g3068" id="g3066" gradientUnits="userSpaceOnUse" x1="305" y1="598" x2="305" y2="8" gradientTransform="matrix(0.15,0,0,0.15,0.85,961.2)"/></defs><g transform="translate(0,-450.36)"><g transform="matrix(6.66,0,0,6.66,-5.66,-5957.7)"><path fill="url(#g3066)" d="m 21.65,961.36 48.69,0 c 11.44,0 20.65,9.21 20.65,20.65 l 0,48.69 c 0,11.44 -9.21,20.65 -20.65,20.65 l -48.69,0 c -11.44,0 -20.65,-9.21 -20.65,-20.65 l 0,-48.69 c 0,-11.44 9.21,-20.65 20.65,-20.65 z"/><path fill="#ffffff" transform="translate(0,450.36)" d="m 20.7,536.59 c -0.4,0 -0.9,0 -1.3,0.2 l 8.4,8.7 8.5,8.8 0.1,0.1 0.2,0.2 0.2,0.2 0.5,0.5 7.3,7.5 c 0.1,0 0.4,0.4 0.7,0.5 0.3,0.1 0.7,0.3 1.1,0.3 0.4,0 0.8,-0.1 1.2,-0.2 0.2,-0.1 0.4,-0.3 0.7,-0.6 l 8.5,-8.7 8.5,-8.8 8.2,-8.5 c -0.5,-0.2 -1.1,-0.4 -1.7,-0.4 z m -2.5,1 c -0.9,0.8 -1.4,2.1 -1.4,3.5 l 0,28.6 c 0,1.1 0.3,2.2 1,3 l 1.1,-1.1 8.8,-8.5 7.8,-7.5 -0.1,-0.1 -8.5,-8.8 -8.5,-8.8 z m 57.1,0.2 -8.3,8.6 -8.5,8.8 -0.1,0.1 8.1,7.9 8.8,8.5 0.5,0.5 c 0.4,-0.7 0.7,-1.7 0.7,-2.7 l 0,-28.6 c 0,-1.2 -0.4,-2.4 -1.1,-3.3 z m -38.7,18.7 -7.8,7.5 -8.8,8.5 -1.1,1 c 0.5,0.3 1.2,0.6 2,0.6 l 51.7,0 c 0.8,0 1.6,-0.3 2.3,-0.8 l -0.5,-0.5 -8.8,-8.5 -8.1,-7.8 -7.3,7.5 c -0.3,0.2 -0.6,0.5 -1,0.7 -0.6,0.2 -1.3,0.5 -1.9,0.5 -0.6,-0.1 -1.3,-0.3 -1.9,-0.6 -0.3,-0.1 -0.4,-0.3 -0.8,-0.6 z"/></g></g></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="info-block"><h3>INSTAGRAM</h3><ul class="info-list"><li><a href="https://www.instagram.com/curator.sung" target="_blank" style="color:#007bff; text-decoration:none; font-weight:600;">@curator.sung</a></li></ul></div>
-                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급 등</li></ul></div>
-                <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li></ul></div>
+                <div class="info-block"><h3>LICENSE</h3><ul class="info-list"><li>화장품상담전문가 2급, 브랜드기획자 1급</li><li>코스메틱머천다이징전문가 1급, 뷰티마케팅전문가 1급</li></ul></div>
+                <div class="info-block"><h3>EDUCATION</h3><ul class="info-list"><li>고려대학교 (안암) 보건학사 졸업</li><li>한국쇼호스트협회 공채반 수료</li></ul></div>
             </div>
         </div>
     </section>
@@ -117,36 +150,45 @@
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
         
-        // PROFILE 메뉴 추가
+        // 고정 메뉴: PROFILE 생성
         const pLink = document.createElement('a'); 
         pLink.href = "#profile"; pLink.textContent = "PROFILE"; 
         navMenu.appendChild(pLink);
         
+        // data.js 데이터를 바탕으로 동적 섹션 생성
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
+                // 메뉴 링크 추가
                 const navLink = document.createElement('a'); 
                 navLink.href = `#${cat.id}`; navLink.textContent = cat.category; 
                 navMenu.appendChild(navLink);
 
+                // 섹션 레이아웃 생성
                 const section = document.createElement('section'); 
                 section.id = cat.id;
                 
                 let itemsHtml = (cat.items && cat.items.length > 0) ? 
                     `<div class="video-grid">${cat.items.map(item => `
-                        <div class="video-item">
-                            <a href="${item.link || 'javascript:void(0);'}" ${item.link ? 'target="_blank"' : ''} class="thumb-link">
+                        <a href="${item.link || 'javascript:void(0);'}" 
+                           ${item.link ? 'target="_blank"' : ''} 
+                           class="video-item">
+                             <div class="thumb-link">
                                  <img src="${item.img}">
                                  <div class="play-overlay"><span>▶</span></div>
-                            </a>
-                            <p>${item.title}</p>
-                            <div class="video-details">${item.details}</div>
-                        </div>`).join('')}</div>` 
+                             </div>
+                             <p>${item.title}</p>
+                             <div class="video-details">${item.details}</div>
+                        </a>`).join('')}</div>` 
                     : `<p style="color:#ccc; text-align:center; padding: 30px 0;">콘텐츠 준비 중입니다.</p>`;
                 
                 section.innerHTML = `
-                    <div class="section-title-wrap"><h2>${cat.category}</h2><span>${cat.subDesc || ""}</span></div>
+                    <div class="section-title-wrap">
+                        <h2>${cat.category}</h2>
+                        <span>${cat.subDesc || ""}</span>
+                    </div>
                     ${itemsHtml}
                     <div class="category-summary">${cat.summary}</div>`;
+                
                 contents.appendChild(section);
             });
         }
