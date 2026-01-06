@@ -44,46 +44,53 @@
         .app-item svg { width: 100%; height: 100%; object-fit: contain; }
         .app-item:hover { transform: translateY(-3px); }
 
-        /* 비디오 가로 그리드 (스크롤바 원래대로 유지) */
-        .video-grid { display: flex; overflow-x: auto; gap: 15px; padding: 10px 5px 25px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        /* 비디오 가로 그리드 (기본 스크롤바 유지) */
+        .video-grid { display: flex; overflow-x: auto; gap: 16px; padding: 10px 5px 30px 5px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         
-        /* 비디오 아이템 박스 전체 호버 효과 */
+        /* 비디오 아이템 박스 전체 호버 효과 (세련된 버전) */
         .video-item { 
             flex: 0 0 160px; 
             background: #fff; 
-            padding: 10px; 
-            border: 1px solid #eee; 
-            border-radius: 15px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            padding: 12px; 
+            border: 1px solid #f0f0f0; /* 선을 아주 흐리게 */
+            border-radius: 16px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* 초기 그림자도 은은하게 */
             scroll-snap-align: center; 
             text-align: center;
-            transition: all 0.3s ease; 
-            text-decoration: none; /* 링크 강조 제거 */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 더 부드러운 애니메이션 */
+            text-decoration: none;
             display: block; 
             cursor: pointer;
+            position: relative;
         }
 
-        /* 마우스 올렸을 때 박스 전체가 떠오르는 효과 */
+        /* 호버 시 파란색 테두리 제거 후 그림자 깊이 조절 */
         .video-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-            border-color: #007bff;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08); /* 깊이감 있는 그림자 */
+            background: #fff; /* 배경색 유지 */
         }
 
-        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 8px; margin-bottom: 8px; }
-        .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; }
+        .thumb-link { position: relative; width: 100%; display: block; overflow: hidden; border-radius: 10px; margin-bottom: 10px; }
+        .video-item img { width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        
+        /* 호버 시 이미지만 아주 살짝 확대 (선택 사항, 박스와 조화로움) */
+        .video-item:hover img {
+            transform: scale(1.03);
+        }
 
-        /* 재생 오버레이 효과 */
-        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
+        /* 재생 오버레이: 아이콘도 조금 더 부드럽게 */
+        .play-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; opacity: 0; transition: 0.3s; }
         .video-item:hover .play-overlay { opacity: 1; }
-        .play-overlay span { color: white; font-size: 1.5rem; }
+        .play-overlay span { color: white; font-size: 1.8rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
 
-        .video-item p { margin: 8px 0 0; font-weight: 700; font-size: 0.85rem; color: #222; line-height: 1.2; }
-        .video-details { margin-top: 5px; font-size: 0.72rem; color: #888; line-height: 1.4; white-space: pre-line; }
-        .category-summary { background: #f8f9fa; padding: 12px 18px; border-radius: 10px; font-size: 0.9rem; color: #666; margin-top: 15px; border-left: 4px solid #eee; }
+        .video-item p { margin: 8px 0 0; font-weight: 700; font-size: 0.88rem; color: #222; line-height: 1.2; }
+        .video-details { margin-top: 6px; font-size: 0.75rem; color: #999; line-height: 1.4; white-space: pre-line; }
+        
+        .category-summary { background: #fcfcfc; padding: 15px 20px; border-radius: 12px; font-size: 0.9rem; color: #777; margin-top: 20px; border: 1px solid #f0f0f0; }
 
         /* 푸터 */
-        footer { text-align: center; padding: 50px 0; color: #bbb; font-size: 0.85rem; border-top: 1px solid #f5f5f5; }
+        footer { text-align: center; padding: 60px 0; color: #ccc; font-size: 0.85rem; border-top: 1px solid #f5f5f5; }
 
         /* 모바일 최적화 */
         @media (max-width: 768px) {
@@ -92,7 +99,7 @@
             .profile-photo { width: 180px; }
             .info-block { flex-direction: column; gap: 5px; }
             .info-block h3 { border-bottom: 1px solid #eee; width: 100%; margin-bottom: 5px; }
-            .video-item { flex: 0 0 155px; } /* 다음 박스 살짝 노출 */
+            .video-item { flex: 0 0 155px; }
         }
     </style>
 </head>
@@ -150,20 +157,17 @@
         const navMenu = document.getElementById('dynamic-nav'); 
         const contents = document.getElementById('portfolio-contents');
         
-        // 고정 메뉴: PROFILE 생성
+        // 고정 메뉴: PROFILE
         const pLink = document.createElement('a'); 
         pLink.href = "#profile"; pLink.textContent = "PROFILE"; 
         navMenu.appendChild(pLink);
         
-        // data.js 데이터를 바탕으로 동적 섹션 생성
         if (typeof videoData !== 'undefined') {
             videoData.forEach(cat => {
-                // 메뉴 링크 추가
                 const navLink = document.createElement('a'); 
                 navLink.href = `#${cat.id}`; navLink.textContent = cat.category; 
                 navMenu.appendChild(navLink);
 
-                // 섹션 레이아웃 생성
                 const section = document.createElement('section'); 
                 section.id = cat.id;
                 
@@ -182,10 +186,7 @@
                     : `<p style="color:#ccc; text-align:center; padding: 30px 0;">콘텐츠 준비 중입니다.</p>`;
                 
                 section.innerHTML = `
-                    <div class="section-title-wrap">
-                        <h2>${cat.category}</h2>
-                        <span>${cat.subDesc || ""}</span>
-                    </div>
+                    <div class="section-title-wrap"><h2>${cat.category}</h2><span>${cat.subDesc || ""}</span></div>
                     ${itemsHtml}
                     <div class="category-summary">${cat.summary}</div>`;
                 
